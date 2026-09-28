@@ -1,17 +1,52 @@
 <!doctype html>
 <html lang="it"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domus Fiorelli — Casa AmoR, Roma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome</title>
+    <meta name="description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms, and easy access to central Rome. Sleeps up to 4 guests.">
+    <link rel="canonical" href="https://fiorellidomus.vercel.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Domus Fiorelli">
+    <meta property="og:title" content="Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome">
+    <meta property="og:description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms, and easy access to central Rome.">
+    <meta property="og:url" content="https://fiorellidomus.vercel.app/">
+    <meta property="og:image" content="https://fiorellidomus.vercel.app/images/giardino.jpeg">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome">
+    <meta name="twitter:description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms.">
+    <meta name="twitter:image" content="https://fiorellidomus.vercel.app/images/giardino.jpeg">
+
+    <link rel="icon" type="image/png" href="images/domus-fiorelli-logo.png">
+    <link rel="apple-touch-icon" href="images/domus-fiorelli-logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@400;500;600&family=Cairo:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Domus Fiorelli",
+        "description": "A private Roman home in Piazza di Villa Fiorelli, Appio Latino, overlooking a communal garden with century-old palm trees. Sleeps up to 4 guests.",
+        "url": "https://fiorellidomus.vercel.app/",
+        "image": "https://fiorellidomus.vercel.app/images/giardino.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Piazza di Villa Fiorelli 12",
+            "addressLocality": "Roma",
+            "addressRegion": "RM",
+            "addressCountry": "IT"
+        }
+    }
+    </script>
 
     <style>
         :root{ --ink:#1c1a17; --paper:#faf7f2; --clay:#b98a5e; --clay-dark:#8a6239; --line:rgba(28,26,23,0.1); }
@@ -24,7 +59,6 @@
         .fade-up{ opacity:0; transform:translateY(28px); }
         ::selection{ background:var(--clay); color:#fff; }
 
-        /* Masonry gallery, natural aspect ratio, no forced cropping */
         .masonry{ column-count:1; column-gap:0.85rem; }
         @media(min-width:640px){ .masonry{ column-count:2; } }
         @media(min-width:1024px){ .masonry{ column-count:3; } }
@@ -36,13 +70,30 @@
 
         .btn-clay{ background:var(--clay); color:#fff; }
         .btn-clay:hover{ background:var(--clay-dark); }
+        .btn-ghost{ background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.3); }
+        .btn-ghost:hover{ background:rgba(255,255,255,0.18); }
+        .btn-outline-dark{ border:1px solid rgba(28,26,23,0.2); color:var(--ink); }
+        .btn-outline-dark:hover{ background:rgba(28,26,23,0.05); }
 
         .lang-switch button{ opacity:0.7; transition:opacity .25s ease, color .25s ease; }
         .lang-switch button.active{ opacity:1; color:var(--clay); font-weight:600; }
+        .lang-switch button:hover{ opacity:1; }
 
         #site-header{ background:transparent; }
         #site-header.is-scrolled{ background:rgba(28,26,23,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); box-shadow:0 4px 20px rgba(0,0,0,0.15); }
-        .lang-switch button:hover{ opacity:1; }
+
+        .mobile-cta-bar{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(28,26,23,0.96); backdrop-filter:blur(10px); padding:10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); display:flex; gap:10px; box-shadow:0 -6px 20px rgba(0,0,0,0.18); }
+        @media(min-width:768px){ .mobile-cta-bar{ display:none; } }
+        @media(max-width:767px){ body{ padding-bottom:78px; } }
+
+        .hub-card{ background:#fff; border:1px solid rgba(28,26,23,0.07); border-radius:1rem; padding:1.5rem; }
+
+        /* RTL (Arabic) support */
+        html[dir="rtl"] body{ font-family:'Cairo','Noto Sans SC',sans-serif; }
+        html[dir="rtl"] .serif{ font-family:'Amiri','Noto Sans SC',serif; }
+        html[dir="rtl"] [class*="tracking-"]{ letter-spacing:normal !important; }
+        html[dir="rtl"] .mask-word-container{ margin-right:0; margin-left:0.28em; }
+        html[dir="rtl"] .mask-word-container:last-child{ margin-left:0; }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
@@ -54,45 +105,55 @@
                 <iconify-icon icon="solar:heart-linear" width="22" height="22"></iconify-icon>
                 <span class="text-lg tracking-wide serif">Domus Fiorelli</span>
             </div>
-            <nav class="hidden lg:flex items-center gap-9 text-sm text-white/90">
-                <a href="https://domusfiorelli.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" data-i18n="nav_guida">Guida</a>
-                <a href="#casa" class="hover:text-white transition-colors" data-i18n="nav_casa">La Casa</a>
-                <a href="#galleria" class="hover:text-white transition-colors" data-i18n="nav_galleria">Galleria</a>
-                <a href="#servizi" class="hover:text-white transition-colors" data-i18n="nav_servizi">Servizi</a>
-                <a href="#zona" class="hover:text-white transition-colors" data-i18n="nav_zona">La Zona</a>
-                <a href="#contatti" class="hover:text-white transition-colors" data-i18n="nav_contatti">Contatti</a>
+            <nav class="hidden lg:flex items-center gap-8 text-sm text-white/90">
+                <a href="#casa" class="hover:text-white transition-colors" data-i18n="nav_house">La Casa</a>
+                <a href="#galleria" class="hover:text-white transition-colors" data-i18n="nav_gallery">Galleria</a>
+                <a href="#zona" class="hover:text-white transition-colors" data-i18n="nav_location">La Zona</a>
+                <a href="https://domusfiorelli.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" data-i18n="nav_guide">Guida Digitale</a>
+                <a href="#contatti" class="hover:text-white transition-colors" data-i18n="nav_contact">Contatti</a>
             </nav>
-            <div class="flex items-center gap-5">
-                <div class="lang-switch flex items-center gap-3 text-xs sm:text-sm text-white tracking-wide">
+            <div class="flex items-center gap-4 sm:gap-5">
+                <div class="lang-switch hidden sm:flex items-center gap-2.5 text-[11px] sm:text-xs text-white tracking-wide">
                     <button type="button" data-lang-btn="it" class="active">IT</button>
                     <button type="button" data-lang-btn="en">EN</button>
                     <button type="button" data-lang-btn="es">ES</button>
+                    <button type="button" data-lang-btn="de">DE</button>
+                    <button type="button" data-lang-btn="ar">AR</button>
                     <button type="button" data-lang-btn="zh">中文</button>
                 </div>
-                <a href="#contatti" class="hidden sm:inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-5 py-2.5 transition-colors duration-300" data-i18n="nav_prenota">
-                    Prenota
+                <a href="#contatti" class="hidden sm:inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-5 py-2.5 transition-colors duration-300" data-i18n="nav_check">
+                    Richiedi Disponibilità
                 </a>
             </div>
+        </div>
+        <div class="lang-switch flex sm:hidden items-center justify-center gap-3 text-[11px] text-white/90 pb-3 -mt-1">
+            <button type="button" data-lang-btn="it" class="active">IT</button>
+            <button type="button" data-lang-btn="en">EN</button>
+            <button type="button" data-lang-btn="es">ES</button>
+            <button type="button" data-lang-btn="de">DE</button>
+            <button type="button" data-lang-btn="ar">AR</button>
+            <button type="button" data-lang-btn="zh">中文</button>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="relative w-full h-[100vh] min-h-[640px] flex items-end overflow-hidden">
         <canvas id="hero-canvas" class="absolute inset-0 w-full h-full z-0 opacity-30 mix-blend-screen"></canvas>
-        <img src="images/giardino.jpeg" alt="Giardino condominiale, Roma" class="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0" style="animation:slowZoom 22s ease-out infinite alternate;">
+        <img src="images/giardino.jpeg" alt="Giardino condominiale visto da Domus Fiorelli, Roma" class="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0" style="animation:slowZoom 22s ease-out infinite alternate;">
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/50 z-[1]"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-20 md:pb-28">
-            <span class="inline-block text-[#e9c9a3] text-xs sm:text-sm tracking-[0.35em] uppercase mb-5 fade-up" data-fade data-i18n="hero_badge">Roma · Appio Latino</span>
-            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.02] serif font-normal mask-reveal-text max-w-4xl" data-i18n="hero_title">
-                Domus Fiorelli, il tuo AmoR per Roma
+        <div class="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-24 md:pb-28">
+            <span class="inline-block text-[#e9c9a3] text-xs sm:text-sm tracking-[0.35em] uppercase mb-5 fade-up" data-fade data-i18n="hero_badge">Piazza di Villa Fiorelli · Roma</span>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.02] serif font-normal mask-reveal-text max-w-4xl">
+                Domus Fiorelli
             </h1>
-            <p class="mt-7 max-w-xl text-white/75 text-base sm:text-lg fade-up" data-fade data-i18n="hero_subtitle">
-                Un appartamento curato nei minimi dettagli, affacciato su un giardino condominiale con palme secolari, a due passi dal centro.
+            <p class="mt-5 max-w-xl text-[#e9c9a3] text-base sm:text-lg serif italic fade-up" data-fade data-i18n="hero_payoff">Una casa romana curata nei dettagli, nel cuore di Villa Fiorelli.</p>
+            <p class="mt-4 max-w-xl text-white/75 text-base sm:text-lg fade-up" data-fade data-i18n="hero_subtitle">
+                Un appartamento affacciato su un giardino condominiale con palme secolari, pensato per soggiorni fino a 4 ospiti.
             </p>
             <div class="mt-9 flex flex-wrap gap-4 fade-up" data-fade>
-                <a href="#contatti" class="inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-7 py-3.5 transition-colors duration-300" data-i18n="hero_cta1">Richiedi disponibilità</a>
-                <a href="#galleria" class="inline-flex items-center justify-center bg-white/10 backdrop-blur text-white border border-white/30 text-sm font-medium rounded-full px-7 py-3.5 hover:bg-white/20 transition-colors duration-300" data-i18n="hero_cta2">Guarda la galleria</a>
+                <a href="#contatti" class="inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-7 py-3.5 transition-colors duration-300" data-i18n="nav_check">Richiedi Disponibilità</a>
+                <a href="https://domusfiorelli.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center btn-ghost backdrop-blur text-sm font-medium rounded-full px-7 py-3.5 transition-colors duration-300" data-i18n="hero_cta2">Apri la Guida Digitale</a>
             </div>
         </div>
 
@@ -106,95 +167,135 @@
     <section class="bg-[var(--ink)] text-white">
         <div class="max-w-6xl mx-auto px-6 md:px-10 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             <div>
-                <div class="text-3xl sm:text-4xl serif mb-1">2</div>
-                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_camere">Camere</div>
-            </div>
-            <div>
-                <div class="text-3xl sm:text-4xl serif mb-1">4</div>
-                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_ospiti">Ospiti</div>
+                <div class="text-3xl sm:text-4xl serif mb-1">1</div>
+                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_bedroom_label">Camera Matrimoniale</div>
             </div>
             <div>
                 <div class="text-3xl sm:text-4xl serif mb-1">1</div>
-                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_giardino">Giardino condominiale</div>
+                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_sofa_label">Divano Letto Matrimoniale</div>
             </div>
             <div>
-                <div class="text-3xl sm:text-4xl serif mb-1">24/7</div>
-                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_checkin">Check-in autonomo</div>
+                <div class="text-3xl sm:text-4xl serif mb-1">4</div>
+                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_guests_label">Ospiti Max</div>
+            </div>
+            <div>
+                <iconify-icon icon="solar:leaf-linear" width="26" height="26" class="mx-auto mb-1.5 text-[#e9c9a3]"></iconify-icon>
+                <div class="text-xs tracking-[0.2em] uppercase text-white/50" data-i18n="stats_garden_label">Giardino Condominiale</div>
             </div>
         </div>
     </section>
 
-    <!-- Story -->
-    <section id="casa" class="max-w-5xl mx-auto text-center py-24 md:py-32 px-6">
+    <!-- Garden Highlight -->
+    <section class="relative w-full h-[52vh] min-h-[360px] overflow-hidden">
+        <img src="images/cucina-pianta-finestra.jpeg" alt="Angolo verde e luce naturale in Domus Fiorelli" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/55"></div>
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+            <h2 class="text-2xl sm:text-4xl md:text-5xl text-white tracking-tight serif font-normal mask-reveal-text max-w-3xl" data-i18n="garden_kicker">Roma fuori. Tranquillità dentro.</h2>
+            <p class="mt-5 max-w-xl text-white/80 text-sm sm:text-base leading-relaxed" data-i18n="garden_text">Affacciata sul verde di un giardino condominiale, con palme secolari, Domus Fiorelli regala una rara sensazione di tranquillità nel cuore di Roma.</p>
+        </div>
+    </section>
+
+    <!-- The House -->
+    <section id="casa" class="max-w-5xl mx-auto text-center pt-24 md:pt-32 px-6">
         <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-5" data-i18n="story_label">La Casa</span>
         <h2 class="text-3xl sm:text-4xl md:text-5xl leading-[1.25] tracking-tight serif font-normal mask-reveal-text" data-i18n="story_title">
-            Ogni stanza racconta una storia: opere d'arte originali, pezzi di design e la luce calda di un vero salotto romano.
+            Un appartamento curato nei minimi dettagli, affacciato sul verde di un giardino condominiale con palme secolari.
         </h2>
     </section>
 
+    <section class="max-w-4xl mx-auto px-6 pt-14 pb-8">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8 text-center">
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:bed-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_bedroom">Camera matrimoniale</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:sofa-2-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_sofa">Divano letto matrimoniale (materasso 21 cm)</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:users-group-rounded-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_guests">Fino a 4 ospiti</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:armchair-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_living">Soggiorno</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:chef-hat-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_kitchen">Cucina completamente attrezzata</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:bath-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_bathroom">Bagno</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:snowflake-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_ac">Aria condizionata</span>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <iconify-icon icon="solar:wi-fi-router-linear" width="24" height="24" class="text-[var(--clay-dark)]"></iconify-icon>
+                <span class="text-sm text-gray-700" data-i18n="house_f_wifi">Wi-Fi ad alta velocità</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Image Trio -->
-    <section class="relative max-w-5xl mx-auto h-[420px] sm:h-[520px] md:h-[600px] flex justify-center items-center mb-28 px-4">
+    <section class="relative max-w-5xl mx-auto h-[420px] sm:h-[520px] md:h-[600px] flex justify-center items-center mt-8 mb-16 px-4">
         <div class="absolute left-2 sm:left-[8%] md:left-[18%] w-[46%] max-w-[280px] aspect-[4/5] -rotate-6 z-10 transform-gpu hover:z-40 hover:scale-105 hover:-rotate-2 transition-all duration-500 ease-out">
             <div class="w-full h-full bg-gray-200 rounded-2xl border-[8px] sm:border-[10px] border-white shadow-xl overflow-hidden relative group">
-                <img src="images/camera-letto.jpeg" alt="Camera da letto" class="w-full h-full object-cover object-top">
+                <img src="images/camera-letto.jpeg" alt="Camera matrimoniale" class="w-full h-full object-cover object-top">
             </div>
         </div>
         <div class="absolute left-1/2 -translate-x-1/2 w-[56%] max-w-[340px] aspect-[4/5] z-30 transform-gpu hover:scale-105 transition-all duration-500 ease-out">
             <div class="p-[2px] rounded-2xl bg-gradient-to-b from-gray-200 via-white to-gray-200 shadow-2xl">
                 <div class="w-full h-full bg-white rounded-2xl border-[8px] sm:border-[10px] border-white overflow-hidden relative">
-                    <img src="images/soggiorno-divano-amor.jpeg" alt="Soggiorno con insegna luminosa AmoR" class="w-full h-full object-cover">
+                    <img src="images/soggiorno-divano-amor.jpeg" alt="Soggiorno con divano letto matrimoniale" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
         <div class="absolute right-2 sm:right-[8%] md:right-[18%] w-[46%] max-w-[280px] aspect-[4/5] rotate-6 z-20 transform-gpu hover:z-40 hover:scale-105 hover:rotate-2 transition-all duration-500 ease-out">
             <div class="w-full h-full bg-gray-200 rounded-2xl border-[8px] sm:border-[10px] border-white shadow-xl overflow-hidden relative group">
-                <img src="images/cucina-open-space.jpeg" alt="Cucina open space" class="w-full h-full object-cover">
+                <img src="images/cucina-open-space.jpeg" alt="Cucina completamente attrezzata" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
-    <section class="max-w-2xl mx-auto text-center pb-24 px-6">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed mask-reveal-text tracking-tight serif font-normal italic" data-i18n="quote_text">
-            "Un rifugio elegante e silenzioso, dove ogni dettaglio — dal caffè in cucina al giardino sotto le finestre — è pensato per farti sentire a casa."
+    <section class="max-w-2xl mx-auto text-center pb-20 px-6">
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed mask-reveal-text tracking-tight serif font-normal italic text-gray-700" data-i18n="quote_text">
+            "Un luogo pensato per farti sentire a casa, con la cura di chi ama davvero questa città."
         </p>
     </section>
 
     <!-- Full Gallery -->
     <section id="galleria" class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pb-28">
         <div class="text-center mb-14">
-            <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="gallery_label">Galleria completa</span>
-            <h3 class="text-2xl sm:text-3xl md:text-5xl tracking-tight serif font-normal mask-reveal-text" data-i18n="gallery_title">Ogni angolo di Domus Fiorelli</h3>
+            <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="gallery_label">Galleria</span>
+            <h3 class="text-2xl sm:text-3xl md:text-5xl tracking-tight serif font-normal mask-reveal-text" data-i18n="gallery_title">Domus Fiorelli in fotografia</h3>
         </div>
 
         <div class="masonry">
-            <!-- Esterno -->
             <figure><img src="images/giardino.jpeg" alt="Giardino condominiale"><figcaption data-i18n="cap_giardino">Giardino</figcaption></figure>
-
-            <!-- Zona giorno: soggiorno, cucina, ingresso -->
             <figure><img src="images/soggiorno-arco.jpeg" alt="Soggiorno visto dall'arco"><figcaption data-i18n="cap_soggiorno">Soggiorno</figcaption></figure>
-            <figure><img src="images/soggiorno-divano-amor.jpeg" alt="Divano e insegna AmoR"><figcaption data-i18n="cap_soggiorno_amor">Soggiorno · AmoR</figcaption></figure>
+            <figure><img src="images/soggiorno-divano-amor.jpeg" alt="Divano letto matrimoniale in soggiorno"><figcaption data-i18n="cap_soggiorno_amor">Soggiorno · AmoR</figcaption></figure>
             <figure><img src="images/salotto-tv.jpeg" alt="Salotto con TV e specchio"><figcaption data-i18n="cap_salotto">Salotto</figcaption></figure>
-            <figure><img src="images/ingresso.jpeg" alt="Ingresso e living"><figcaption data-i18n="cap_ingresso">Ingresso</figcaption></figure>
+            <figure><img src="images/ingresso.jpeg" alt="Ingresso"><figcaption data-i18n="cap_ingresso">Ingresso</figcaption></figure>
             <figure><img src="images/soggiorno-cucina-ampio.jpeg" alt="Vista ampia soggiorno e cucina"><figcaption data-i18n="cap_openspace">Open Space</figcaption></figure>
             <figure><img src="images/cucina-open-space.jpeg" alt="Cucina open space"><figcaption data-i18n="cap_cucina">Cucina</figcaption></figure>
             <figure><img src="images/cucina-pranzo.jpeg" alt="Zona pranzo in cucina"><figcaption data-i18n="cap_zonapranzo">Zona Pranzo</figcaption></figure>
-            <figure><img src="images/soggiorno-pranzo-amor.jpeg" alt="Sala da pranzo con insegna AmoR"><figcaption data-i18n="cap_saladapranzo">Sala da Pranzo</figcaption></figure>
+            <figure><img src="images/soggiorno-pranzo-amor.jpeg" alt="Sala da pranzo"><figcaption data-i18n="cap_saladapranzo">Sala da Pranzo</figcaption></figure>
             <figure><img src="images/cucina-pianta-finestra.jpeg" alt="Angolo verde vicino alla finestra"><figcaption data-i18n="cap_angoloverde">Angolo Verde</figcaption></figure>
-
-            <!-- Zona notte: camera -->
-            <figure><img src="images/camera-letto.jpeg" alt="Camera da letto con carta da parati botanica"><figcaption data-i18n="cap_camera">Camera</figcaption></figure>
-            <figure><img src="images/camera-amor.jpeg" alt="Letto con insegna luminosa AmoR"><figcaption data-i18n="cap_camera_amor">Camera · AmoR</figcaption></figure>
+            <figure><img src="images/camera-letto.jpeg" alt="Camera matrimoniale"><figcaption data-i18n="cap_camera">Camera</figcaption></figure>
+            <figure><img src="images/camera-amor.jpeg" alt="Camera matrimoniale, dettaglio"><figcaption data-i18n="cap_camera_amor">Camera · AmoR</figcaption></figure>
             <figure><img src="images/camera-vista.jpeg" alt="Camera con vista sul giardino"><figcaption data-i18n="cap_camera_vista">Camera · Vista</figcaption></figure>
             <figure><img src="images/camera-cabina-armadio.jpeg" alt="Cabina armadio della camera"><figcaption data-i18n="cap_cabina">Cabina Armadio</figcaption></figure>
-
-            <!-- Dettagli e oggetti -->
-            <figure><img src="images/soggiorno-poltrona.jpeg" alt="Poltrona e opera d'arte"><figcaption data-i18n="cap_angololettura">Angolo Lettura</figcaption></figure>
+            <figure><img src="images/soggiorno-poltrona.jpeg" alt="Angolo lettura in soggiorno"><figcaption data-i18n="cap_angololettura">Angolo Lettura</figcaption></figure>
             <figure><img src="images/soggiorno-console.jpeg" alt="Console con specchio"><figcaption data-i18n="cap_soggiorno_dettaglio_a">Soggiorno · Dettaglio</figcaption></figure>
-            <figure><img src="images/soggiorno-dettaglio.jpeg" alt="Dettaglio del tavolino e poltrona"><figcaption data-i18n="cap_soggiorno_dettaglio_b">Soggiorno · Dettaglio</figcaption></figure>
+            <figure><img src="images/soggiorno-dettaglio.jpeg" alt="Dettaglio del tavolino"><figcaption data-i18n="cap_soggiorno_dettaglio_b">Soggiorno · Dettaglio</figcaption></figure>
             <figure><img src="images/soggiorno-specchio.jpeg" alt="Riflesso del soggiorno nello specchio"><figcaption data-i18n="cap_soggiorno_specchio">Soggiorno · Specchio</figcaption></figure>
             <figure><img src="images/cucina-mensole.jpeg" alt="Mensole in cucina"><figcaption data-i18n="cap_cucina_dettaglio_a">Cucina · Dettaglio</figcaption></figure>
             <figure><img src="images/cucina-mensole-2.jpeg" alt="Mensole cucina, altra vista"><figcaption data-i18n="cap_cucina_dettaglio_b">Cucina · Dettaglio</figcaption></figure>
-            <figure><img src="images/dettaglio-arredo.jpeg" alt="Dettaglio arredamento e opera d'arte"><figcaption data-i18n="cap_dettaglioarredo">Dettaglio Arredo</figcaption></figure>
+            <figure><img src="images/dettaglio-arredo.jpeg" alt="Dettaglio arredamento"><figcaption data-i18n="cap_dettaglioarredo">Dettaglio Arredo</figcaption></figure>
             <figure><img src="images/dettaglio-scrivania.jpeg" alt="Postazione scrivania"><figcaption data-i18n="cap_angolostudio">Angolo Studio</figcaption></figure>
         </div>
     </section>
@@ -203,56 +304,143 @@
     <section id="servizi" class="max-w-6xl mx-auto px-6 pb-28">
         <div class="text-center mb-16">
             <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="amenities_label">Comfort</span>
-            <h3 class="text-2xl sm:text-3xl md:text-5xl tracking-tight serif font-normal mask-reveal-text" data-i18n="amenities_title">Tutto ciò che serve, con gusto</h3>
+            <h3 class="text-2xl sm:text-3xl md:text-5xl tracking-tight serif font-normal mask-reveal-text" data-i18n="amenities_title">Tutto ciò che serve</h3>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            <div class="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm border border-black/5">
-                <iconify-icon icon="solar:user-heart-linear" width="26" height="26" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
-                <div><div class="font-medium mb-1" data-i18n="amenity1_title">Una guida al tuo fianco</div><div class="text-sm text-gray-500" data-i18n="amenity1_desc">Ti accompagniamo in casa e alla scoperta di Roma, per tutto il soggiorno</div></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:chef-hat-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_kitchen">Cucina completamente attrezzata</span>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm border border-black/5">
-                <iconify-icon icon="solar:tv-linear" width="26" height="26" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
-                <div><div class="font-medium mb-1">Smart TV &amp; Wi-Fi</div><div class="text-sm text-gray-500" data-i18n="amenity2_desc">Connessione veloce in ogni stanza</div></div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:cup-hot-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_smeg">Elettrodomestici Smeg</span>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm border border-black/5">
-                <iconify-icon icon="solar:chef-hat-linear" width="26" height="26" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
-                <div><div class="font-medium mb-1" data-i18n="amenity3_title">Cucina completa</div><div class="text-sm text-gray-500" data-i18n="amenity3_desc">Elettrodomestici SMEG e tutto il necessario</div></div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:snowflake-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_ac">Aria condizionata</span>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm border border-black/5">
-                <iconify-icon icon="solar:snowflake-linear" width="26" height="26" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
-                <div><div class="font-medium mb-1" data-i18n="amenity4_title">Climatizzazione</div><div class="text-sm text-gray-500" data-i18n="amenity4_desc">Aria condizionata in ogni ambiente</div></div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:wi-fi-router-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_wifi">Wi-Fi ad alta velocità</span>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm border border-black/5">
-                <iconify-icon icon="solar:palette-linear" width="26" height="26" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
-                <div><div class="font-medium mb-1" data-i18n="amenity5_title">Design curato</div><div class="text-sm text-gray-500" data-i18n="amenity5_desc">Opere d'arte originali e pezzi di design</div></div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:tv-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium">Smart TV</span>
+            </div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:bed-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_bedroom">Camera matrimoniale confortevole</span>
+            </div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:sofa-2-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_sofa">Divano letto matrimoniale full-size</span>
+            </div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:compass-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_concierge">Concierge digitale</span>
+            </div>
+            <div class="flex items-center gap-3 p-5 rounded-2xl bg-white shadow-sm border border-black/5">
+                <iconify-icon icon="solar:palette-linear" width="22" height="22" class="text-[var(--clay-dark)] shrink-0"></iconify-icon>
+                <span class="text-sm font-medium" data-i18n="amenity_interiors">Interni scelti con cura</span>
             </div>
         </div>
     </section>
 
-    <!-- Location -->
-    <section id="zona" class="max-w-6xl mx-auto px-6 pb-28 grid md:grid-cols-2 gap-10 items-center">
-        <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-            <img src="images/giardino.jpeg" alt="Il quartiere intorno a Domus Fiorelli" class="w-full h-full object-cover">
+    <!-- Location: Connected to Rome -->
+    <section id="zona" class="max-w-6xl mx-auto px-6 pb-16">
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-14">
+            <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                <img src="images/giardino.jpeg" alt="Il quartiere Appio Latino intorno a Domus Fiorelli" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="location_label">La Zona</span>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl tracking-tight serif font-normal mb-5" data-i18n="location_title">Roma autentica, ben collegata</h3>
+                <p class="text-gray-600 leading-relaxed mb-6" data-i18n="location_intro">Domus Fiorelli si trova in Piazza di Villa Fiorelli, nel quartiere Appio Latino — una zona autentica e residenziale di Roma, con palazzi del primo Novecento, mercati rionali, piccoli negozi, bar e ristoranti di quartiere. Da qui il centro storico è facilmente raggiungibile.</p>
+                <ul class="space-y-3 text-sm text-gray-700 mb-7">
+                    <li class="flex items-center gap-3"><iconify-icon icon="solar:map-point-linear" width="18" height="18" class="text-[var(--clay-dark)] shrink-0"></iconify-icon><span data-i18n="location_li1">Quartiere residenziale autentico, lontano dal turismo di massa</span></li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="solar:buildings-2-linear" width="18" height="18" class="text-[var(--clay-dark)] shrink-0"></iconify-icon><span data-i18n="location_li2">Palazzi signorili del primo Novecento</span></li>
+                    <li class="flex items-center gap-3"><iconify-icon icon="solar:cup-hot-linear" width="18" height="18" class="text-[var(--clay-dark)] shrink-0"></iconify-icon><span data-i18n="location_li3">Mercati, bar e ristoranti di quartiere</span></li>
+                </ul>
+                <a href="https://www.google.com/maps/search/?api=1&query=Piazza+di+Villa+Fiorelli+12%2C+Roma" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-outline-dark text-sm font-medium rounded-full px-6 py-3 transition-colors duration-300">
+                    <iconify-icon icon="solar:map-arrow-square-linear" width="18" height="18"></iconify-icon>
+                    <span data-i18n="maps_cta">Apri in Google Maps</span>
+                </a>
+            </div>
         </div>
-        <div>
-            <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="location_label">La Zona</span>
-            <h3 class="text-2xl sm:text-3xl md:text-4xl tracking-tight serif font-normal mb-5" data-i18n="location_title">Appio Latino, la Roma vera</h3>
-            <p class="text-gray-600 leading-relaxed mb-6" data-i18n="location_text">Domus Fiorelli si trova in Piazza di Villa Fiorelli, nel cuore dell'<strong>Appio Latino</strong> — il quartiere dove i romani abitano davvero: mercati rionali, bar senza turisti, palazzi degli anni Venti che raccontano l'altra Roma, borghese ed elegante. Da qui il centro storico, il Colosseo e Trastevere sono a pochi minuti.</p>
-            <ul class="space-y-3 text-sm text-gray-700">
-                <li class="flex items-center gap-3"><iconify-icon icon="solar:map-point-linear" width="18" height="18" class="text-[var(--clay-dark)]"></iconify-icon><span data-i18n="location_li1">Piazza di Villa Fiorelli, quartiere residenziale e autentico</span></li>
-                <li class="flex items-center gap-3"><iconify-icon icon="solar:bus-linear" width="18" height="18" class="text-[var(--clay-dark)]"></iconify-icon><span data-i18n="location_li2">Fermate metro e bus a pochi minuti dal centro storico</span></li>
-                <li class="flex items-center gap-3"><iconify-icon icon="solar:cup-hot-linear" width="18" height="18" class="text-[var(--clay-dark)]"></iconify-icon><span data-i18n="location_li3">Mercati rionali, bar e ristoranti senza turisti</span></li>
-            </ul>
+
+        <!-- Transport hubs -->
+        <div class="grid sm:grid-cols-3 gap-4 sm:gap-5 mb-10">
+            <div class="hub-card">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-[#22C55E]/15 text-[#15803d]">Metro C</span>
+                    <span class="text-xs text-gray-400">600 m</span>
+                </div>
+                <div class="font-medium mb-1">Lodi</div>
+                <div class="text-sm text-gray-500 mb-3" data-i18n="hub1_desc">La metro più moderna di Roma</div>
+                <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-gray-500">
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Colosseo</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Fori Imperiali</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">San Giovanni</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Pigneto</span>
+                </div>
+                <a href="https://maps.google.com/?q=Metro+Lodi+Roma" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--clay-dark)] font-medium inline-flex items-center gap-1.5">
+                    <iconify-icon icon="solar:map-arrow-square-linear" width="15" height="15"></iconify-icon>
+                    <span data-i18n="maps_cta">Apri in Google Maps</span>
+                </a>
+            </div>
+            <div class="hub-card">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-[#F97316]/15 text-[#c2410c]">Metro A</span>
+                    <span class="text-xs text-gray-400">750 m</span>
+                </div>
+                <div class="font-medium mb-1">Re di Roma</div>
+                <div class="text-sm text-gray-500 mb-3" data-i18n="hub2_desc">Collegamento diretto al centro storico</div>
+                <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-gray-500">
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Spagna</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Barberini</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Ottaviano</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Flaminio</span>
+                </div>
+                <a href="https://maps.google.com/?q=Re+di+Roma+Metro+Roma" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--clay-dark)] font-medium inline-flex items-center gap-1.5">
+                    <iconify-icon icon="solar:map-arrow-square-linear" width="15" height="15"></iconify-icon>
+                    <span data-i18n="maps_cta">Apri in Google Maps</span>
+                </a>
+            </div>
+            <div class="hub-card">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-gray-200 text-gray-700">Treno</span>
+                    <span class="text-xs text-gray-400">550 m</span>
+                </div>
+                <div class="font-medium mb-1">Roma Tuscolana</div>
+                <div class="text-sm text-gray-500 mb-3" data-i18n="hub3_desc">Treni regionali e aeroporto di Fiumicino</div>
+                <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-gray-500">
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Fiumicino ✈</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Trastevere</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Ostiense</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100">Testaccio</span>
+                </div>
+                <a href="https://maps.google.com/?q=Roma+Tuscolana+Station" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--clay-dark)] font-medium inline-flex items-center gap-1.5">
+                    <iconify-icon icon="solar:map-arrow-square-linear" width="15" height="15"></iconify-icon>
+                    <span data-i18n="maps_cta">Apri in Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-black/5">
+            <iframe
+                src="https://maps.google.com/maps?q=Piazza%20di%20Villa%20Fiorelli%2012%2C%20Roma&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Domus Fiorelli — Piazza di Villa Fiorelli, Roma"></iframe>
         </div>
     </section>
 
-    <!-- Interactive Guide -->
+    <!-- Digital Concierge -->
     <section id="guida" class="max-w-6xl mx-auto px-6 pb-28">
         <div class="relative rounded-[2rem] overflow-hidden bg-white border border-black/5 shadow-xl grid md:grid-cols-2 items-stretch">
             <div class="p-10 sm:p-12 md:p-14 flex flex-col justify-center">
-                <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="guide_label">Guida Digitale</span>
-                <h3 class="text-2xl sm:text-3xl md:text-4xl tracking-tight serif font-normal mb-5" data-i18n="guide_title">Una guida interattiva, sempre con te</h3>
-                <p class="text-gray-600 leading-relaxed mb-8" data-i18n="guide_text">Per Domus Fiorelli abbiamo creato una guida digitale interattiva: ti accompagna passo passo nell'uso della casa — Wi-Fi, elettrodomestici, check-in — e ti aiuta a scoprire Roma in autonomia, con consigli su quartiere, trasporti e luoghi da non perdere.</p>
+                <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="guide_label">Concierge Digitale</span>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl tracking-tight serif font-normal mb-5" data-i18n="guide_title">La tua Guida Digitale</h3>
+                <p class="text-gray-600 leading-relaxed mb-8" data-i18n="guide_text">Tutto ciò che ti serve per vivere Roma, prima e durante il tuo soggiorno.</p>
                 <a href="https://domusfiorelli.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-clay text-sm font-medium rounded-full px-7 py-3.5 w-fit transition-colors duration-300">
                     <iconify-icon icon="solar:compass-linear" width="18" height="18"></iconify-icon>
                     <span data-i18n="guide_cta">Apri la Guida</span>
@@ -271,34 +459,84 @@
         </div>
         <div class="absolute inset-0 bg-[var(--ink)]/75"></div>
         <div class="relative z-10 max-w-xl mx-auto">
-            <span class="inline-block text-[#e9c9a3] text-xs sm:text-sm tracking-[0.35em] uppercase mb-5" data-i18n="contact_label">Prenota</span>
-            <h3 class="text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-6 serif font-normal mask-reveal-text" data-i18n="contact_title">Il tuo soggiorno a Roma inizia qui</h3>
-            <p class="text-white/70 mb-10 text-base sm:text-lg" data-i18n="contact_text">Scrivici su WhatsApp per disponibilità, tariffe e informazioni su Domus Fiorelli.</p>
-            <a href="https://wa.me/393493511305" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-clay text-sm font-medium rounded-full px-8 py-3.5 transition-colors duration-300">
-                <iconify-icon icon="ic:baseline-whatsapp" width="18" height="18"></iconify-icon>
-                <span data-i18n="contact_cta">Contattaci su WhatsApp</span>
-            </a>
+            <span class="inline-block text-[#e9c9a3] text-xs sm:text-sm tracking-[0.35em] uppercase mb-5" data-i18n="contact_label">Contatti</span>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-6 serif font-normal mask-reveal-text" data-i18n="contact_title">Richiedi la tua disponibilità</h3>
+            <p class="text-white/70 mb-10 text-base sm:text-lg" data-i18n="contact_text">Scrivici per conoscere disponibilità e tariffe di Domus Fiorelli. Ti rispondiamo direttamente, senza intermediari.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="https://wa.me/393493511305" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-clay text-sm font-medium rounded-full px-8 py-3.5 transition-colors duration-300">
+                    <iconify-icon icon="ic:baseline-whatsapp" width="18" height="18"></iconify-icon>
+                    <span data-i18n="contact_cta_whatsapp">WhatsApp Concierge</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer class="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-        <span class="serif text-gray-600">Fiorelli</span>
-        <span data-i18n="footer_copy">© 2026 Domus Fiorelli · Roma</span>
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+            <div>
+                <div class="serif text-lg mb-3">Domus Fiorelli</div>
+                <p class="text-sm text-gray-500 leading-relaxed">Piazza di Villa Fiorelli 12<br><span data-i18n="footer_country">Roma, Italia</span></p>
+            </div>
+            <div>
+                <div class="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4" data-i18n="footer_explore_label">Esplora</div>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#casa" class="hover:text-[var(--clay-dark)]" data-i18n="nav_house">La Casa</a></li>
+                    <li><a href="#galleria" class="hover:text-[var(--clay-dark)]" data-i18n="nav_gallery">Galleria</a></li>
+                    <li><a href="#zona" class="hover:text-[var(--clay-dark)]" data-i18n="nav_location">La Zona</a></li>
+                    <li><a href="https://domusfiorelli.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--clay-dark)]" data-i18n="nav_guide">Guida Digitale</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4" data-i18n="footer_stay_label">Soggiorno</div>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#contatti" class="hover:text-[var(--clay-dark)]" data-i18n="nav_check">Richiedi Disponibilità</a></li>
+                    <li><a href="https://wa.me/393493511305" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--clay-dark)]" data-i18n="contact_cta_whatsapp">WhatsApp Concierge</a></li>
+                    <li><a href="#contatti" class="hover:text-[var(--clay-dark)]" data-i18n="nav_contact">Contatti</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4" data-i18n="footer_info_label">Informazioni</div>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="privacy.html" class="hover:text-[var(--clay-dark)]" data-i18n="footer_privacy">Privacy Policy</a></li>
+                    <li><a href="cookie.html" class="hover:text-[var(--clay-dark)]" data-i18n="footer_cookie">Cookie Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-[var(--clay-dark)]" data-i18n="footer_terms">Termini & Condizioni</a></li>
+                    <li><a href="cancellation.html" class="hover:text-[var(--clay-dark)]" data-i18n="footer_cancellation">Politica di Cancellazione</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-black/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-5">
+            <span class="text-sm text-gray-400" data-i18n="footer_copy">© 2026 Domus Fiorelli · Piazza di Villa Fiorelli, Roma</span>
+            <a href="#contatti" class="inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-6 py-2.5 transition-colors duration-300" data-i18n="nav_check">Richiedi Disponibilità</a>
+        </div>
     </footer>
+
+    <!-- Mobile sticky CTA -->
+    <div class="mobile-cta-bar">
+        <a href="#contatti" class="flex-1 inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-4 py-3" data-i18n="nav_check">Richiedi Disponibilità</a>
+        <a href="https://wa.me/393493511305" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center btn-ghost rounded-full w-12 h-12 shrink-0" aria-label="WhatsApp">
+            <iconify-icon icon="ic:baseline-whatsapp" width="20" height="20"></iconify-icon>
+        </a>
+    </div>
 
     <script>
         const TRANSLATIONS = {
             it: {
-                nav_guida: "Guida", nav_casa: "La Casa", nav_galleria: "Galleria", nav_servizi: "Servizi", nav_zona: "La Zona", nav_contatti: "Contatti", nav_prenota: "Prenota",
-                hero_badge: "Roma · Appio Latino",
-                hero_title: "Domus Fiorelli, il tuo AmoR per Roma",
-                hero_subtitle: "Un appartamento curato nei minimi dettagli, affacciato su un giardino condominiale con palme secolari, a due passi dal centro.",
-                hero_cta1: "Richiedi disponibilità", hero_cta2: "Guarda la galleria", hero_scroll: "Scorri",
-                stats_camere: "Camere", stats_ospiti: "Ospiti", stats_giardino: "Giardino condominiale", stats_checkin: "Check-in autonomo",
+                nav_house: "La Casa", nav_gallery: "Galleria", nav_location: "La Zona", nav_guide: "Guida Digitale", nav_contact: "Contatti", nav_check: "Richiedi Disponibilità",
+                hero_badge: "Piazza di Villa Fiorelli · Roma",
+                hero_payoff: "Una casa romana curata nei dettagli, nel cuore di Villa Fiorelli.",
+                hero_subtitle: "Un appartamento affacciato su un giardino condominiale con palme secolari, pensato per soggiorni fino a 4 ospiti.",
+                hero_cta2: "Apri la Guida Digitale", hero_scroll: "Scorri",
+                stats_bedroom_label: "Camera Matrimoniale", stats_sofa_label: "Divano Letto Matrimoniale", stats_guests_label: "Ospiti Max", stats_garden_label: "Giardino Condominiale",
+                garden_kicker: "Roma fuori. Tranquillità dentro.",
+                garden_text: "Affacciata sul verde di un giardino condominiale, con palme secolari, Domus Fiorelli regala una rara sensazione di tranquillità nel cuore di Roma.",
                 story_label: "La Casa",
-                story_title: "Ogni stanza racconta una storia: opere d'arte originali, pezzi di design e la luce calda di un vero salotto romano.",
-                quote_text: "“Un rifugio elegante e silenzioso, dove ogni dettaglio — dal caffè in cucina al giardino sotto le finestre — è pensato per farti sentire a casa.”",
-                gallery_label: "Galleria completa", gallery_title: "Ogni angolo di Domus Fiorelli",
+                story_title: "Un appartamento curato nei minimi dettagli, affacciato sul verde di un giardino condominiale con palme secolari.",
+                house_f_bedroom: "Camera matrimoniale", house_f_sofa: "Divano letto matrimoniale (materasso 21 cm)", house_f_guests: "Fino a 4 ospiti",
+                house_f_living: "Soggiorno", house_f_kitchen: "Cucina completamente attrezzata", house_f_bathroom: "Bagno",
+                house_f_ac: "Aria condizionata", house_f_wifi: "Wi-Fi ad alta velocità",
+                quote_text: "“Un luogo pensato per farti sentire a casa, con la cura di chi ama davvero questa città.”",
+                gallery_label: "Galleria", gallery_title: "Domus Fiorelli in fotografia",
                 cap_soggiorno_amor: "Soggiorno · AmoR", cap_cucina: "Cucina", cap_camera: "Camera", cap_soggiorno: "Soggiorno",
                 cap_zonapranzo: "Zona Pranzo", cap_camera_amor: "Camera · AmoR", cap_angololettura: "Angolo Lettura", cap_salotto: "Salotto",
                 cap_cucina_dettaglio_a: "Cucina · Dettaglio", cap_camera_vista: "Camera · Vista", cap_ingresso: "Ingresso",
@@ -306,36 +544,44 @@
                 cap_cabina: "Cabina Armadio", cap_soggiorno_dettaglio_b: "Soggiorno · Dettaglio", cap_dettaglioarredo: "Dettaglio Arredo",
                 cap_openspace: "Open Space", cap_cucina_dettaglio_b: "Cucina · Dettaglio", cap_soggiorno_specchio: "Soggiorno · Specchio",
                 cap_angolostudio: "Angolo Studio", cap_giardino: "Giardino",
-                amenities_label: "Comfort", amenities_title: "Tutto ciò che serve, con gusto",
-                amenity1_title: "Una guida al tuo fianco", amenity1_desc: "Ti accompagniamo in casa e alla scoperta di Roma, per tutto il soggiorno",
-                amenity2_desc: "Connessione veloce in ogni stanza",
-                amenity3_title: "Cucina completa", amenity3_desc: "Elettrodomestici SMEG e tutto il necessario",
-                amenity4_title: "Climatizzazione", amenity4_desc: "Aria condizionata in ogni ambiente",
-                amenity5_title: "Design curato", amenity5_desc: "Opere d'arte originali e pezzi di design",
-                location_label: "La Zona", location_title: "Appio Latino, la Roma vera",
-                location_text: "Domus Fiorelli si trova in Piazza di Villa Fiorelli, nel cuore dell'<strong>Appio Latino</strong> — il quartiere dove i romani abitano davvero: mercati rionali, bar senza turisti, palazzi degli anni Venti che raccontano l'altra Roma, borghese ed elegante. Da qui il centro storico, il Colosseo e Trastevere sono a pochi minuti.",
-                location_li1: "Piazza di Villa Fiorelli, quartiere residenziale e autentico",
-                location_li2: "Fermate metro e bus a pochi minuti dal centro storico",
-                location_li3: "Mercati rionali, bar e ristoranti senza turisti",
-                guide_label: "Guida Digitale", guide_title: "Una guida interattiva, sempre con te",
-                guide_text: "Per Domus Fiorelli abbiamo creato una guida digitale interattiva: ti accompagna passo passo nell'uso della casa — Wi-Fi, elettrodomestici, check-in — e ti aiuta a scoprire Roma in autonomia, con consigli su quartiere, trasporti e luoghi da non perdere.",
+                amenities_label: "Comfort", amenities_title: "Tutto ciò che serve",
+                amenity_kitchen: "Cucina completamente attrezzata", amenity_smeg: "Elettrodomestici Smeg", amenity_ac: "Aria condizionata",
+                amenity_wifi: "Wi-Fi ad alta velocità", amenity_bedroom: "Camera matrimoniale confortevole", amenity_sofa: "Divano letto matrimoniale full-size",
+                amenity_concierge: "Concierge digitale", amenity_interiors: "Interni scelti con cura",
+                location_label: "La Zona", location_title: "Roma autentica, ben collegata",
+                location_intro: "Domus Fiorelli si trova in Piazza di Villa Fiorelli, nel quartiere Appio Latino — una zona autentica e residenziale di Roma, con palazzi del primo Novecento, mercati rionali, piccoli negozi, bar e ristoranti di quartiere. Da qui il centro storico è facilmente raggiungibile.",
+                location_li1: "Quartiere residenziale autentico, lontano dal turismo di massa",
+                location_li2: "Palazzi signorili del primo Novecento",
+                location_li3: "Mercati, bar e ristoranti di quartiere",
+                hub1_desc: "La metro più moderna di Roma", hub2_desc: "Collegamento diretto al centro storico", hub3_desc: "Treni regionali e aeroporto di Fiumicino",
+                maps_cta: "Apri in Google Maps",
+                guide_label: "Concierge Digitale", guide_title: "La tua Guida Digitale",
+                guide_text: "Tutto ciò che ti serve per vivere Roma, prima e durante il tuo soggiorno.",
                 guide_cta: "Apri la Guida",
-                contact_label: "Prenota", contact_title: "Il tuo soggiorno a Roma inizia qui",
-                contact_text: "Scrivici su WhatsApp per disponibilità, tariffe e informazioni su Domus Fiorelli.",
-                contact_cta: "Contattaci su WhatsApp",
-                footer_copy: "© 2026 Domus Fiorelli · Roma"
+                contact_label: "Contatti", contact_title: "Richiedi la tua disponibilità",
+                contact_text: "Scrivici per conoscere disponibilità e tariffe di Domus Fiorelli. Ti rispondiamo direttamente, senza intermediari.",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "Roma, Italia",
+                footer_explore_label: "Esplora", footer_stay_label: "Soggiorno", footer_info_label: "Informazioni",
+                footer_privacy: "Privacy Policy", footer_cookie: "Cookie Policy", footer_terms: "Termini & Condizioni", footer_cancellation: "Politica di Cancellazione",
+                footer_copy: "© 2026 Domus Fiorelli · Piazza di Villa Fiorelli, Roma"
             },
             en: {
-                nav_guida: "Guide", nav_casa: "The Home", nav_galleria: "Gallery", nav_servizi: "Amenities", nav_zona: "The Area", nav_contatti: "Contact", nav_prenota: "Book Now",
-                hero_badge: "Rome · Appio Latino",
-                hero_title: "Domus Fiorelli, your AmoR for Rome",
-                hero_subtitle: "An apartment curated down to the smallest detail, overlooking a shared courtyard garden with century-old palm trees, just steps from the centre.",
-                hero_cta1: "Check Availability", hero_cta2: "View Gallery", hero_scroll: "Scroll",
-                stats_camere: "Bedrooms", stats_ospiti: "Guests", stats_giardino: "Shared Garden", stats_checkin: "Self Check-in",
-                story_label: "The Home",
-                story_title: "Every room tells a story: original artwork, design pieces, and the warm light of a true Roman living room.",
-                quote_text: "“An elegant, peaceful retreat, where every detail — from the coffee in the kitchen to the garden beneath the windows — is designed to make you feel at home.”",
-                gallery_label: "Full Gallery", gallery_title: "Every corner of Domus Fiorelli",
+                nav_house: "The House", nav_gallery: "Gallery", nav_location: "Location", nav_guide: "Digital Guide", nav_contact: "Contact", nav_check: "Check Availability",
+                hero_badge: "Piazza di Villa Fiorelli · Rome",
+                hero_payoff: "A private Roman home in the heart of Villa Fiorelli.",
+                hero_subtitle: "An apartment overlooking a communal garden with century-old palm trees, comfortably hosting up to 4 guests.",
+                hero_cta2: "Open Digital Guide", hero_scroll: "Scroll",
+                stats_bedroom_label: "Double Bedroom", stats_sofa_label: "Double Sofa Bed", stats_guests_label: "Guests Max", stats_garden_label: "Communal Garden",
+                garden_kicker: "Rome outside. Stillness inside.",
+                garden_text: "Overlooking the green of a communal garden with century-old palm trees, Domus Fiorelli offers a rare sense of calm in the heart of Rome.",
+                story_label: "The House",
+                story_title: "An apartment curated down to the smallest detail, overlooking the green of a communal garden with century-old palm trees.",
+                house_f_bedroom: "Double bedroom", house_f_sofa: "Double sofa bed (21 cm mattress)", house_f_guests: "Sleeps up to 4 guests",
+                house_f_living: "Living room", house_f_kitchen: "Fully equipped kitchen", house_f_bathroom: "Bathroom",
+                house_f_ac: "Air conditioning", house_f_wifi: "High-speed Wi-Fi",
+                quote_text: "“A place designed to make you feel at home, with the care of someone who truly loves this city.”",
+                gallery_label: "Gallery", gallery_title: "Domus Fiorelli in photographs",
                 cap_soggiorno_amor: "Living Room · AmoR", cap_cucina: "Kitchen", cap_camera: "Bedroom", cap_soggiorno: "Living Room",
                 cap_zonapranzo: "Dining Area", cap_camera_amor: "Bedroom · AmoR", cap_angololettura: "Reading Corner", cap_salotto: "Lounge",
                 cap_cucina_dettaglio_a: "Kitchen · Detail", cap_camera_vista: "Bedroom · View", cap_ingresso: "Entrance",
@@ -343,36 +589,44 @@
                 cap_cabina: "Walk-in Closet", cap_soggiorno_dettaglio_b: "Living Room · Detail", cap_dettaglioarredo: "Interior Detail",
                 cap_openspace: "Open Space", cap_cucina_dettaglio_b: "Kitchen · Detail", cap_soggiorno_specchio: "Living Room · Mirror",
                 cap_angolostudio: "Study Corner", cap_giardino: "Garden",
-                amenities_label: "Comfort", amenities_title: "Everything you need, with style",
-                amenity1_title: "A guide by your side", amenity1_desc: "We accompany you around the home and while discovering Rome, throughout your stay",
-                amenity2_desc: "Fast connection in every room",
-                amenity3_title: "Fully equipped kitchen", amenity3_desc: "SMEG appliances and everything you need",
-                amenity4_title: "Air Conditioning", amenity4_desc: "Air conditioning in every room",
-                amenity5_title: "Curated design", amenity5_desc: "Original artwork and design pieces",
-                location_label: "The Area", location_title: "Appio Latino, the real Rome",
-                location_text: "Domus Fiorelli is located in Piazza di Villa Fiorelli, in the heart of <strong>Appio Latino</strong> — the neighbourhood where Romans actually live: local markets, bars with no tourist menus, 1920s buildings that tell a different, elegant, bourgeois story of Rome. From here, the historic centre, the Colosseum and Trastevere are just minutes away.",
-                location_li1: "Piazza di Villa Fiorelli, an authentic residential neighbourhood",
-                location_li2: "Metro and bus stops just minutes from the historic centre",
-                location_li3: "Local markets, bars and restaurants off the tourist trail",
-                guide_label: "Digital Guide", guide_title: "An interactive guide, always with you",
-                guide_text: "For Domus Fiorelli we created an interactive digital guide: it walks you step by step through using the home — Wi-Fi, appliances, check-in — and helps you discover Rome on your own, with tips on the neighbourhood, transport and unmissable spots.",
+                amenities_label: "Amenities", amenities_title: "Everything You Need",
+                amenity_kitchen: "Fully equipped kitchen", amenity_smeg: "Smeg appliances", amenity_ac: "Air conditioning",
+                amenity_wifi: "High-speed Wi-Fi", amenity_bedroom: "Comfortable double bedroom", amenity_sofa: "Full-size double sofa bed",
+                amenity_concierge: "Digital Concierge", amenity_interiors: "Carefully selected interiors",
+                location_label: "Location", location_title: "Connected to Rome",
+                location_intro: "Domus Fiorelli is located in Piazza di Villa Fiorelli, in the Appio Latino neighbourhood — an authentic, residential part of Rome with early-20th-century buildings, local markets, small shops, bars and neighbourhood restaurants. From here the historic centre is easy to reach.",
+                location_li1: "Authentic residential neighbourhood, away from mass tourism",
+                location_li2: "Elegant early-20th-century buildings",
+                location_li3: "Local markets, bars and neighbourhood restaurants",
+                hub1_desc: "Rome's most modern metro line", hub2_desc: "Direct link to the historic centre", hub3_desc: "Regional trains and Fiumicino Airport",
+                maps_cta: "Open in Google Maps",
+                guide_label: "Digital Concierge", guide_title: "Your Digital Concierge",
+                guide_text: "Everything you need to experience Rome, before and during your stay.",
                 guide_cta: "Open the Guide",
-                contact_label: "Book", contact_title: "Your stay in Rome starts here",
-                contact_text: "Message us on WhatsApp for availability, rates and information about Domus Fiorelli.",
-                contact_cta: "Contact us on WhatsApp",
-                footer_copy: "© 2026 Domus Fiorelli · Rome"
+                contact_label: "Contact", contact_title: "Check Your Availability",
+                contact_text: "Get in touch to check availability and rates for Domus Fiorelli. We reply directly, with no middlemen.",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "Rome, Italy",
+                footer_explore_label: "Explore", footer_stay_label: "Stay", footer_info_label: "Information",
+                footer_privacy: "Privacy Policy", footer_cookie: "Cookie Policy", footer_terms: "Terms & Conditions", footer_cancellation: "Cancellation Policy",
+                footer_copy: "© 2026 Domus Fiorelli · Piazza di Villa Fiorelli, Rome"
             },
             es: {
-                nav_guida: "Guía", nav_casa: "La Casa", nav_galleria: "Galería", nav_servizi: "Servicios", nav_zona: "La Zona", nav_contatti: "Contacto", nav_prenota: "Reservar",
-                hero_badge: "Roma · Appio Latino",
-                hero_title: "Domus Fiorelli, tu AmoR por Roma",
-                hero_subtitle: "Un apartamento cuidado hasta el más mínimo detalle, con vistas a un jardín comunitario con palmeras centenarias, a pocos pasos del centro.",
-                hero_cta1: "Consultar disponibilidad", hero_cta2: "Ver galería", hero_scroll: "Desliza",
-                stats_camere: "Habitaciones", stats_ospiti: "Huéspedes", stats_giardino: "Jardín comunitario", stats_checkin: "Check-in autónomo",
+                nav_house: "La Casa", nav_gallery: "Galería", nav_location: "Ubicación", nav_guide: "Guía Digital", nav_contact: "Contacto", nav_check: "Consultar Disponibilidad",
+                hero_badge: "Piazza di Villa Fiorelli · Roma",
+                hero_payoff: "Una casa romana cuidada al detalle, en el corazón de Villa Fiorelli.",
+                hero_subtitle: "Un apartamento con vistas a un jardín comunitario con palmeras centenarias, con capacidad para hasta 4 huéspedes.",
+                hero_cta2: "Abrir Guía Digital", hero_scroll: "Desliza",
+                stats_bedroom_label: "Habitación Doble", stats_sofa_label: "Sofá Cama Doble", stats_guests_label: "Huéspedes Máx.", stats_garden_label: "Jardín Comunitario",
+                garden_kicker: "Roma fuera. Calma dentro.",
+                garden_text: "Con vistas al verde de un jardín comunitario con palmeras centenarias, Domus Fiorelli ofrece una rara sensación de calma en el corazón de Roma.",
                 story_label: "La Casa",
-                story_title: "Cada habitación cuenta una historia: obras de arte originales, piezas de diseño y la luz cálida de un auténtico salón romano.",
-                quote_text: "“Un refugio elegante y tranquilo, donde cada detalle — desde el café en la cocina hasta el jardín bajo las ventanas — está pensado para que te sientas como en casa.”",
-                gallery_label: "Galería completa", gallery_title: "Cada rincón de Domus Fiorelli",
+                story_title: "Un apartamento cuidado hasta el más mínimo detalle, con vistas al verde de un jardín comunitario con palmeras centenarias.",
+                house_f_bedroom: "Habitación doble", house_f_sofa: "Sofá cama doble (colchón de 21 cm)", house_f_guests: "Hasta 4 huéspedes",
+                house_f_living: "Salón", house_f_kitchen: "Cocina totalmente equipada", house_f_bathroom: "Baño",
+                house_f_ac: "Aire acondicionado", house_f_wifi: "Wi-Fi de alta velocidad",
+                quote_text: "“Un lugar pensado para que te sientas como en casa, con el cuidado de quien realmente ama esta ciudad.”",
+                gallery_label: "Galería", gallery_title: "Domus Fiorelli en fotografías",
                 cap_soggiorno_amor: "Salón · AmoR", cap_cucina: "Cocina", cap_camera: "Dormitorio", cap_soggiorno: "Salón",
                 cap_zonapranzo: "Comedor", cap_camera_amor: "Dormitorio · AmoR", cap_angololettura: "Rincón de lectura", cap_salotto: "Salón de TV",
                 cap_cucina_dettaglio_a: "Cocina · Detalle", cap_camera_vista: "Dormitorio · Vista", cap_ingresso: "Entrada",
@@ -380,36 +634,134 @@
                 cap_cabina: "Vestidor", cap_soggiorno_dettaglio_b: "Salón · Detalle", cap_dettaglioarredo: "Detalle de decoración",
                 cap_openspace: "Espacio Abierto", cap_cucina_dettaglio_b: "Cocina · Detalle", cap_soggiorno_specchio: "Salón · Espejo",
                 cap_angolostudio: "Rincón de estudio", cap_giardino: "Jardín",
-                amenities_label: "Confort", amenities_title: "Todo lo que necesitas, con estilo",
-                amenity1_title: "Un guía a tu lado", amenity1_desc: "Te acompañamos en la casa y en el descubrimiento de Roma, durante toda tu estancia",
-                amenity2_desc: "Conexión rápida en cada habitación",
-                amenity3_title: "Cocina completa", amenity3_desc: "Electrodomésticos SMEG y todo lo necesario",
-                amenity4_title: "Climatización", amenity4_desc: "Aire acondicionado en cada ambiente",
-                amenity5_title: "Diseño cuidado", amenity5_desc: "Obras de arte originales y piezas de diseño",
-                location_label: "La Zona", location_title: "Appio Latino, la auténtica Roma",
-                location_text: "Domus Fiorelli se encuentra en Piazza di Villa Fiorelli, en el corazón de <strong>Appio Latino</strong> — el barrio donde los romanos viven de verdad: mercados de barrio, bares sin menú turístico, edificios de los años veinte que cuentan otra Roma, burguesa y elegante. Desde aquí, el centro histórico, el Coliseo y Trastevere están a pocos minutos.",
-                location_li1: "Piazza di Villa Fiorelli, un barrio residencial y auténtico",
-                location_li2: "Paradas de metro y autobús a pocos minutos del centro histórico",
-                location_li3: "Mercados de barrio, bares y restaurantes sin turistas",
-                guide_label: "Guía Digital", guide_title: "Una guía interactiva, siempre contigo",
-                guide_text: "Para Domus Fiorelli hemos creado una guía digital interactiva: te acompaña paso a paso en el uso de la casa — Wi-Fi, electrodomésticos, check-in — y te ayuda a descubrir Roma por tu cuenta, con consejos sobre el barrio, transporte y lugares imprescindibles.",
+                amenities_label: "Comodidades", amenities_title: "Todo lo que necesitas",
+                amenity_kitchen: "Cocina totalmente equipada", amenity_smeg: "Electrodomésticos Smeg", amenity_ac: "Aire acondicionado",
+                amenity_wifi: "Wi-Fi de alta velocidad", amenity_bedroom: "Cómoda habitación doble", amenity_sofa: "Sofá cama doble de tamaño completo",
+                amenity_concierge: "Concierge digital", amenity_interiors: "Interiores cuidadosamente seleccionados",
+                location_label: "Ubicación", location_title: "Roma auténtica, bien conectada",
+                location_intro: "Domus Fiorelli se encuentra en Piazza di Villa Fiorelli, en el barrio de Appio Latino — una zona auténtica y residencial de Roma, con edificios de principios del siglo XX, mercados de barrio, pequeñas tiendas, bares y restaurantes locales. Desde aquí el centro histórico es fácil de alcanzar.",
+                location_li1: "Barrio residencial auténtico, lejos del turismo masivo",
+                location_li2: "Edificios señoriales de principios del siglo XX",
+                location_li3: "Mercados, bares y restaurantes de barrio",
+                hub1_desc: "La línea de metro más moderna de Roma", hub2_desc: "Conexión directa con el centro histórico", hub3_desc: "Trenes regionales y aeropuerto de Fiumicino",
+                maps_cta: "Abrir en Google Maps",
+                guide_label: "Concierge Digital", guide_title: "Tu Concierge Digital",
+                guide_text: "Todo lo que necesitas para vivir Roma, antes y durante tu estancia.",
                 guide_cta: "Abrir la Guía",
-                contact_label: "Reservar", contact_title: "Tu estancia en Roma empieza aquí",
-                contact_text: "Escríbenos por WhatsApp para disponibilidad, tarifas e información sobre Domus Fiorelli.",
-                contact_cta: "Contáctanos por WhatsApp",
-                footer_copy: "© 2026 Domus Fiorelli · Roma"
+                contact_label: "Contacto", contact_title: "Consulta tu disponibilidad",
+                contact_text: "Escríbenos para conocer la disponibilidad y las tarifas de Domus Fiorelli. Te respondemos directamente, sin intermediarios.",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "Roma, Italia",
+                footer_explore_label: "Explorar", footer_stay_label: "Estancia", footer_info_label: "Información",
+                footer_privacy: "Política de Privacidad", footer_cookie: "Política de Cookies", footer_terms: "Términos y Condiciones", footer_cancellation: "Política de Cancelación",
+                footer_copy: "© 2026 Domus Fiorelli · Piazza di Villa Fiorelli, Roma"
+            },
+            de: {
+                nav_house: "Das Haus", nav_gallery: "Galerie", nav_location: "Lage", nav_guide: "Digitaler Guide", nav_contact: "Kontakt", nav_check: "Verfügbarkeit prüfen",
+                hero_badge: "Piazza di Villa Fiorelli · Rom",
+                hero_payoff: "Ein römisches Zuhause mit Liebe zum Detail, im Herzen von Villa Fiorelli.",
+                hero_subtitle: "Eine Wohnung mit Blick auf einen Gemeinschaftsgarten mit jahrhundertealten Palmen, für bis zu 4 Gäste.",
+                hero_cta2: "Digitalen Guide öffnen", hero_scroll: "Scrollen",
+                stats_bedroom_label: "Doppelzimmer", stats_sofa_label: "Doppel-Schlafsofa", stats_guests_label: "Gäste Max.", stats_garden_label: "Gemeinschaftsgarten",
+                garden_kicker: "Rom draußen. Ruhe drinnen.",
+                garden_text: "Mit Blick auf das Grün eines Gemeinschaftsgartens mit jahrhundertealten Palmen bietet Domus Fiorelli ein seltenes Gefühl von Ruhe im Herzen Roms.",
+                story_label: "Das Haus",
+                story_title: "Eine Wohnung mit Liebe zum Detail, mit Blick auf das Grün eines Gemeinschaftsgartens mit jahrhundertealten Palmen.",
+                house_f_bedroom: "Doppelzimmer", house_f_sofa: "Doppel-Schlafsofa (21 cm Matratze)", house_f_guests: "Bis zu 4 Gäste",
+                house_f_living: "Wohnzimmer", house_f_kitchen: "Voll ausgestattete Küche", house_f_bathroom: "Badezimmer",
+                house_f_ac: "Klimaanlage", house_f_wifi: "Highspeed-WLAN",
+                quote_text: "„Ein Ort, der dich das Gefühl geben soll, zu Hause zu sein — mit der Sorgfalt eines echten Liebhabers dieser Stadt.“",
+                gallery_label: "Galerie", gallery_title: "Domus Fiorelli in Bildern",
+                cap_soggiorno_amor: "Wohnzimmer · AmoR", cap_cucina: "Küche", cap_camera: "Schlafzimmer", cap_soggiorno: "Wohnzimmer",
+                cap_zonapranzo: "Essbereich", cap_camera_amor: "Schlafzimmer · AmoR", cap_angololettura: "Leseecke", cap_salotto: "Lounge",
+                cap_cucina_dettaglio_a: "Küche · Detail", cap_camera_vista: "Schlafzimmer · Aussicht", cap_ingresso: "Eingang",
+                cap_soggiorno_dettaglio_a: "Wohnzimmer · Detail", cap_angoloverde: "Grüne Ecke", cap_saladapranzo: "Esszimmer",
+                cap_cabina: "Begehbarer Kleiderschrank", cap_soggiorno_dettaglio_b: "Wohnzimmer · Detail", cap_dettaglioarredo: "Einrichtungsdetail",
+                cap_openspace: "Offener Wohnbereich", cap_cucina_dettaglio_b: "Küche · Detail", cap_soggiorno_specchio: "Wohnzimmer · Spiegel",
+                cap_angolostudio: "Arbeitsecke", cap_giardino: "Garten",
+                amenities_label: "Ausstattung", amenities_title: "Alles, was du brauchst",
+                amenity_kitchen: "Voll ausgestattete Küche", amenity_smeg: "Smeg-Geräte", amenity_ac: "Klimaanlage",
+                amenity_wifi: "Highspeed-WLAN", amenity_bedroom: "Komfortables Doppelzimmer", amenity_sofa: "Vollwertiges Doppel-Schlafsofa",
+                amenity_concierge: "Digitaler Concierge", amenity_interiors: "Sorgfältig ausgewählte Inneneinrichtung",
+                location_label: "Lage", location_title: "Authentisches Rom, gut angebunden",
+                location_intro: "Domus Fiorelli liegt an der Piazza di Villa Fiorelli, im Stadtviertel Appio Latino — einem authentischen Wohnviertel Roms mit Gebäuden aus dem frühen 20. Jahrhundert, Stadtteilmärkten, kleinen Geschäften, Bars und Restaurants. Von hier aus ist das historische Zentrum leicht erreichbar.",
+                location_li1: "Authentisches Wohnviertel, abseits des Massentourismus",
+                location_li2: "Elegante Gebäude aus dem frühen 20. Jahrhundert",
+                location_li3: "Märkte, Bars und Restaurants im Viertel",
+                hub1_desc: "Roms modernste U-Bahn-Linie", hub2_desc: "Direkte Verbindung zum historischen Zentrum", hub3_desc: "Regionalzüge und Flughafen Fiumicino",
+                maps_cta: "In Google Maps öffnen",
+                guide_label: "Digitaler Concierge", guide_title: "Dein Digitaler Concierge",
+                guide_text: "Alles, was du brauchst, um Rom zu erleben — vor und während deines Aufenthalts.",
+                guide_cta: "Guide öffnen",
+                contact_label: "Kontakt", contact_title: "Verfügbarkeit anfragen",
+                contact_text: "Kontaktiere uns für Verfügbarkeit und Preise von Domus Fiorelli. Wir antworten dir direkt, ohne Vermittler.",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "Rom, Italien",
+                footer_explore_label: "Entdecken", footer_stay_label: "Aufenthalt", footer_info_label: "Informationen",
+                footer_privacy: "Datenschutz", footer_cookie: "Cookie-Richtlinie", footer_terms: "AGB", footer_cancellation: "Stornierungsbedingungen",
+                footer_copy: "© 2026 Domus Fiorelli · Piazza di Villa Fiorelli, Rom"
+            },
+            ar: {
+                nav_house: "المنزل", nav_gallery: "المعرض", nav_location: "الموقع", nav_guide: "الدليل الرقمي", nav_contact: "اتصل بنا", nav_check: "تحقق من التوفر",
+                hero_badge: "بيازا دي فيلا فيوريلي · روما",
+                hero_payoff: "منزل روماني خاص في قلب فيلا فيوريلي، بعناية فائقة بكل التفاصيل.",
+                hero_subtitle: "شقة تطل على حديقة مشتركة بها أشجار نخيل معمّرة، تتسع بشكل مريح لغاية 4 ضيوف.",
+                hero_cta2: "افتح الدليل الرقمي", hero_scroll: "مرر للأسفل",
+                stats_bedroom_label: "غرفة نوم مزدوجة", stats_sofa_label: "أريكة سرير مزدوجة", stats_guests_label: "الحد الأقصى للضيوف", stats_garden_label: "حديقة مشتركة",
+                garden_kicker: "روما بالخارج. الهدوء بالداخل.",
+                garden_text: "تطل دوموس فيوريللي على مساحة خضراء لحديقة مشتركة بها أشجار نخيل معمّرة، لتمنحك إحساساً نادراً بالهدوء في قلب روما.",
+                story_label: "المنزل",
+                story_title: "شقة بعناية فائقة بأدق التفاصيل، تطل على المساحة الخضراء لحديقة مشتركة بها أشجار نخيل معمّرة.",
+                house_f_bedroom: "غرفة نوم مزدوجة", house_f_sofa: "أريكة سرير مزدوجة (مرتبة 21 سم)", house_f_guests: "يتسع لغاية 4 ضيوف",
+                house_f_living: "غرفة المعيشة", house_f_kitchen: "مطبخ مجهز بالكامل", house_f_bathroom: "حمام",
+                house_f_ac: "تكييف هواء", house_f_wifi: "واي فاي عالي السرعة",
+                quote_text: "«مكان صُمم ليمنحك شعور المنزل، بعناية من يحب هذه المدينة حقاً.»",
+                gallery_label: "المعرض", gallery_title: "دوموس فيوريللي في الصور",
+                cap_soggiorno_amor: "غرفة المعيشة · AmoR", cap_cucina: "المطبخ", cap_camera: "غرفة النوم", cap_soggiorno: "غرفة المعيشة",
+                cap_zonapranzo: "منطقة الطعام", cap_camera_amor: "غرفة النوم · AmoR", cap_angololettura: "ركن القراءة", cap_salotto: "الصالة",
+                cap_cucina_dettaglio_a: "المطبخ · تفاصيل", cap_camera_vista: "غرفة النوم · إطلالة", cap_ingresso: "المدخل",
+                cap_soggiorno_dettaglio_a: "غرفة المعيشة · تفاصيل", cap_angoloverde: "الركن الأخضر", cap_saladapranzo: "غرفة الطعام",
+                cap_cabina: "غرفة الملابس", cap_soggiorno_dettaglio_b: "غرفة المعيشة · تفاصيل", cap_dettaglioarredo: "تفاصيل الديكور",
+                cap_openspace: "مساحة مفتوحة", cap_cucina_dettaglio_b: "المطبخ · تفاصيل", cap_soggiorno_specchio: "غرفة المعيشة · المرآة",
+                cap_angolostudio: "ركن الدراسة", cap_giardino: "الحديقة",
+                amenities_label: "وسائل الراحة", amenities_title: "كل ما تحتاجه",
+                amenity_kitchen: "مطبخ مجهز بالكامل", amenity_smeg: "أجهزة Smeg", amenity_ac: "تكييف هواء",
+                amenity_wifi: "واي فاي عالي السرعة", amenity_bedroom: "غرفة نوم مزدوجة مريحة", amenity_sofa: "أريكة سرير مزدوجة بحجم كامل",
+                amenity_concierge: "خدمة الكونسيرج الرقمية", amenity_interiors: "تصميم داخلي مختار بعناية",
+                location_label: "الموقع", location_title: "روما الأصيلة، بمواصلات ممتازة",
+                location_intro: "تقع دوموس فيوريللي في بيازا دي فيلا فيوريلي، في حي أبيو لاتينو — وهو حي روماني أصيل وسكني يضم مبانٍ من أوائل القرن العشرين وأسواقاً محلية ومتاجر صغيرة ومقاهي ومطاعم محلية. ومن هنا يسهل الوصول إلى وسط المدينة التاريخي.",
+                location_li1: "حي سكني أصيل بعيداً عن الزحام السياحي",
+                location_li2: "مبانٍ أنيقة من أوائل القرن العشرين",
+                location_li3: "أسواق ومقاهي ومطاعم محلية",
+                hub1_desc: "أحدث خط مترو في روما", hub2_desc: "ربط مباشر بوسط المدينة التاريخي", hub3_desc: "قطارات إقليمية ومطار فيوميتشينو",
+                maps_cta: "افتح في خرائط جوجل",
+                guide_label: "الكونسيرج الرقمي", guide_title: "دليلك الرقمي",
+                guide_text: "كل ما تحتاجه لعيش تجربة روما، قبل إقامتك وأثناءها.",
+                guide_cta: "افتح الدليل",
+                contact_label: "اتصل بنا", contact_title: "تحقق من التوفر الخاص بك",
+                contact_text: "تواصل معنا لمعرفة التوفر والأسعار الخاصة بدوموس فيوريللي. نرد عليك مباشرة دون وسطاء.",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "روما، إيطاليا",
+                footer_explore_label: "استكشف", footer_stay_label: "الإقامة", footer_info_label: "معلومات",
+                footer_privacy: "سياسة الخصوصية", footer_cookie: "سياسة ملفات تعريف الارتباط", footer_terms: "الشروط والأحكام", footer_cancellation: "سياسة الإلغاء",
+                footer_copy: "© 2026 دوموس فيوريللي · بيازا دي فيلا فيوريلي، روما"
             },
             zh: {
-                nav_guida: "向导", nav_casa: "住所", nav_galleria: "画廊", nav_servizi: "设施", nav_zona: "周边", nav_contatti: "联系我们", nav_prenota: "预订",
-                hero_badge: "罗马 · 阿皮奥拉蒂诺区",
-                hero_title: "Domus Fiorelli,你与罗马的AmoR之恋",
-                hero_subtitle: "一间精心布置、细节考究的公寓,俯瞰着种有百年棕榈树的小区花园,距市中心仅几步之遥。",
-                hero_cta1: "查询空房", hero_cta2: "查看图库", hero_scroll: "向下滑动",
-                stats_camere: "卧室", stats_ospiti: "客人", stats_giardino: "小区花园", stats_checkin: "自助入住",
+                nav_house: "住所", nav_gallery: "画廊", nav_location: "周边", nav_guide: "数字向导", nav_contact: "联系我们", nav_check: "查询空房",
+                hero_badge: "Villa Fiorelli广场 · 罗马",
+                hero_payoff: "位于Villa Fiorelli核心地带的罗马私宅,细节考究。",
+                hero_subtitle: "公寓俯瞰种有百年棕榈树的小区花园,最多可舒适入住4位客人。",
+                hero_cta2: "打开数字向导", hero_scroll: "向下滑动",
+                stats_bedroom_label: "双人卧室", stats_sofa_label: "双人沙发床", stats_guests_label: "最多客人数", stats_garden_label: "小区花园",
+                garden_kicker: "外面是罗马,里面是宁静。",
+                garden_text: "多姆斯·菲奥雷利俯瞰着种有百年棕榈树的绿意盎然的小区花园,在罗马市中心带来难得的宁静感。",
                 story_label: "住所介绍",
-                story_title: "每个房间都在讲述一个故事:原创艺术品、设计家具,以及一间真正罗马客厅所特有的温暖光线。",
-                quote_text: "“一处优雅静谧的居所,从厨房里的咖啡到窗外的花园,每一处细节都只为让你感受家的温暖。”",
-                gallery_label: "完整图库", gallery_title: "Domus Fiorelli的每一个角落",
+                story_title: "一间细节考究的公寓,俯瞰着种有百年棕榈树的绿意小区花园。",
+                house_f_bedroom: "双人卧室", house_f_sofa: "双人沙发床(21厘米厚床垫)", house_f_guests: "最多容纳4位客人",
+                house_f_living: "客厅", house_f_kitchen: "设备齐全的厨房", house_f_bathroom: "浴室",
+                house_f_ac: "空调", house_f_wifi: "高速Wi-Fi",
+                quote_text: "“一个让你感受家的温暖之地,倾注着真正热爱这座城市之人的用心。”",
+                gallery_label: "图库", gallery_title: "镜头下的Domus Fiorelli",
                 cap_soggiorno_amor: "客厅 · AmoR", cap_cucina: "厨房", cap_camera: "卧室", cap_soggiorno: "客厅",
                 cap_zonapranzo: "用餐区", cap_camera_amor: "卧室 · AmoR", cap_angololettura: "阅读角", cap_salotto: "起居室",
                 cap_cucina_dettaglio_a: "厨房 · 细节", cap_camera_vista: "卧室 · 景观", cap_ingresso: "入口",
@@ -417,24 +769,27 @@
                 cap_cabina: "步入式衣帽间", cap_soggiorno_dettaglio_b: "客厅 · 细节", cap_dettaglioarredo: "家具细节",
                 cap_openspace: "开放空间", cap_cucina_dettaglio_b: "厨房 · 细节", cap_soggiorno_specchio: "客厅 · 镜面",
                 cap_angolostudio: "书房角", cap_giardino: "花园",
-                amenities_label: "舒适设施", amenities_title: "所需一应俱全,尽显品味",
-                amenity1_title: "贴心向导,全程陪伴", amenity1_desc: "在整个旅程中,我们全程陪伴您熟悉住所并探索罗马",
-                amenity2_desc: "每个房间均配备高速网络连接",
-                amenity3_title: "设备齐全的厨房", amenity3_desc: "配备SMEG家电及所有必需品",
-                amenity4_title: "空调系统", amenity4_desc: "每个房间均配备空调",
-                amenity5_title: "精心设计", amenity5_desc: "原创艺术品与设计家具",
-                location_label: "周边环境", location_title: "阿皮奥拉蒂诺,真正的罗马",
-                location_text: "Domus Fiorelli位于Villa Fiorelli广场,坐落在<strong>阿皮奥拉蒂诺</strong>区的中心地带——这里是罗马人真正生活的社区:街区市集、没有游客菜单的酒吧、讲述着另一面优雅中产罗马故事的1920年代建筑。从这里出发,历史中心、斗兽场和特拉斯提弗列区都近在咫尺。",
-                location_li1: "Villa Fiorelli广场,原汁原味的居住社区",
-                location_li2: "地铁和公交站距历史中心仅几分钟路程",
-                location_li3: "地道的街区市集、酒吧与餐厅",
-                guide_label: "数字向导", guide_title: "一份随时相伴的互动向导",
-                guide_text: "我们为Domus Fiorelli打造了一份互动式数字向导:手把手教你使用家中的一切——Wi-Fi、家电、入住流程——并帮助你自主探索罗马,提供周边、交通及必游景点的贴心建议。",
+                amenities_label: "舒适设施", amenities_title: "所需一应俱全",
+                amenity_kitchen: "设备齐全的厨房", amenity_smeg: "Smeg家电", amenity_ac: "空调",
+                amenity_wifi: "高速Wi-Fi", amenity_bedroom: "舒适的双人卧室", amenity_sofa: "标准尺寸双人沙发床",
+                amenity_concierge: "数字礼宾服务", amenity_interiors: "精心挑选的室内陈设",
+                location_label: "周边环境", location_title: "地道罗马,交通便利",
+                location_intro: "多姆斯·菲奥雷利位于Villa Fiorelli广场,坐落在阿皮奥拉蒂诺(Appio Latino)街区——罗马一个原汁原味的居住社区,拥有20世纪初的建筑、社区市集、小商店、酒吧和街区餐厅。从这里前往历史中心也十分便捷。",
+                location_li1: "地道的居住社区,远离大众旅游区",
+                location_li2: "20世纪初的优雅建筑",
+                location_li3: "社区市集、酒吧与餐厅",
+                hub1_desc: "罗马最现代化的地铁线路", hub2_desc: "直达历史中心", hub3_desc: "区域列车及菲乌米奇诺机场",
+                maps_cta: "在谷歌地图中打开",
+                guide_label: "数字礼宾", guide_title: "您的数字向导",
+                guide_text: "在您抵达前及旅居期间,尽享罗马生活所需的一切。",
                 guide_cta: "打开向导",
-                contact_label: "预订", contact_title: "您的罗马之旅从这里开始",
-                contact_text: "通过WhatsApp联系我们,了解Domus Fiorelli的空房、价格及更多信息。",
-                contact_cta: "通过WhatsApp联系我们",
-                footer_copy: "© 2026 Domus Fiorelli · 罗马"
+                contact_label: "联系我们", contact_title: "查询您的空房情况",
+                contact_text: "联系我们了解Domus Fiorelli的空房情况及价格,我们将直接回复,无需中间商。",
+                contact_cta_whatsapp: "WhatsApp Concierge",
+                footer_country: "罗马,意大利",
+                footer_explore_label: "探索", footer_stay_label: "入住", footer_info_label: "信息",
+                footer_privacy: "隐私政策", footer_cookie: "Cookie政策", footer_terms: "条款与条件", footer_cancellation: "取消政策",
+                footer_copy: "© 2026 Domus Fiorelli · Villa Fiorelli广场,罗马"
             }
         };
 
@@ -443,6 +798,7 @@
         const applyLang = (lang) => {
             currentLang = lang;
             document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
             const dict = TRANSLATIONS[lang];
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -483,20 +839,14 @@
                 gsap.to(el, { opacity: 1, y: 0, duration: 1, delay: 0.3 + i * 0.15, ease: "power3.out" });
             });
 
-            // Header background on scroll
             const header = document.getElementById('site-header');
             ScrollTrigger.create({
                 start: 60, end: 99999,
-                onUpdate: (self) => {
-                    if (window.scrollY > 60) {
-                        header.classList.add('is-scrolled');
-                    } else {
-                        header.classList.remove('is-scrolled');
-                    }
+                onUpdate: () => {
+                    header.classList.toggle('is-scrolled', window.scrollY > 60);
                 }
             });
 
-            // Hero particle canvas
             const canvas = document.getElementById('hero-canvas');
             const ctx = canvas.getContext('2d');
             let width, height, particles = [];

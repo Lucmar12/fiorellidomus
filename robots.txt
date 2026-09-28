@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+Disallow: /cookie.html
+Disallow: /terms.html
+Disallow: /cancellation.html
+
+Sitemap: https://fiorellidomus.vercel.app/sitemap.xml
