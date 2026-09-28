@@ -37,8 +37,11 @@
         .btn-clay{ background:var(--clay); color:#fff; }
         .btn-clay:hover{ background:var(--clay-dark); }
 
-        .lang-switch button{ opacity:0.5; transition:opacity .25s ease, color .25s ease; }
+        .lang-switch button{ opacity:0.7; transition:opacity .25s ease, color .25s ease; }
         .lang-switch button.active{ opacity:1; color:var(--clay); font-weight:600; }
+
+        #site-header{ background:transparent; }
+        #site-header.is-scrolled{ background:rgba(28,26,23,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); box-shadow:0 4px 20px rgba(0,0,0,0.15); }
         .lang-switch button:hover{ opacity:1; }
     </style>
 </head>
@@ -486,9 +489,9 @@
                 start: 60, end: 99999,
                 onUpdate: (self) => {
                     if (window.scrollY > 60) {
-                        header.classList.add('bg-[var(--ink)]/90', 'backdrop-blur', 'shadow-md');
+                        header.classList.add('is-scrolled');
                     } else {
-                        header.classList.remove('bg-[var(--ink)]/90', 'backdrop-blur', 'shadow-md');
+                        header.classList.remove('is-scrolled');
                     }
                 }
             });
