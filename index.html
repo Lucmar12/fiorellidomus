@@ -3,20 +3,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome</title>
-    <meta name="description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms, and easy access to central Rome. Sleeps up to 4 guests.">
-    <link rel="canonical" href="https://fiorellidomus.vercel.app/">
+    <meta name="description" content="A private Roman home in Piazza di Villa Fiorelli, Rome. Curated interiors, a garden with century-old palms, easy access to the historic centre. Sleeps up to 4.">
+    <link rel="canonical" href="https://www.domusfiorelli.com/">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Domus Fiorelli">
     <meta property="og:title" content="Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome">
-    <meta property="og:description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms, and easy access to central Rome.">
-    <meta property="og:url" content="https://fiorellidomus.vercel.app/">
-    <meta property="og:image" content="https://fiorellidomus.vercel.app/images/giardino.jpeg">
+    <meta property="og:description" content="A private Roman home in Piazza di Villa Fiorelli, Rome. Curated interiors, a garden with century-old palms, easy access to the historic centre. Sleeps up to 4.">
+    <meta property="og:url" content="https://www.domusfiorelli.com/">
+    <meta property="og:image" content="https://www.domusfiorelli.com/images/giardino.jpeg">
     <meta property="og:locale" content="it_IT">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="es_ES">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Domus Fiorelli | Boutique Roman Residence in Villa Fiorelli, Rome">
-    <meta name="twitter:description" content="A private Roman home in Piazza di Villa Fiorelli, Appio Latino. Curated interiors, a communal garden with century-old palms.">
-    <meta name="twitter:image" content="https://fiorellidomus.vercel.app/images/giardino.jpeg">
+    <meta name="twitter:description" content="A private Roman home in Piazza di Villa Fiorelli, Rome. Curated interiors, a garden with century-old palms, easy access to the historic centre.">
+    <meta name="twitter:image" content="https://www.domusfiorelli.com/images/giardino.jpeg">
 
     <link rel="icon" type="image/png" href="images/domus-fiorelli-logo.png">
     <link rel="apple-touch-icon" href="images/domus-fiorelli-logo.png">
@@ -36,8 +40,8 @@
         "@type": "LodgingBusiness",
         "name": "Domus Fiorelli",
         "description": "A private Roman home in Piazza di Villa Fiorelli, Appio Latino, overlooking a communal garden with century-old palm trees. Sleeps up to 4 guests.",
-        "url": "https://fiorellidomus.vercel.app/",
-        "image": "https://fiorellidomus.vercel.app/images/giardino.jpeg",
+        "url": "https://www.domusfiorelli.com/",
+        "image": "https://www.domusfiorelli.com/images/giardino.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Piazza di Villa Fiorelli 12",
@@ -45,11 +49,30 @@
             "addressRegion": "RM",
             "addressCountry": "IT"
         },
+        "checkinTime": "15:00",
+        "checkoutTime": "11:00",
+        "petsAllowed": "https://schema.org/False",
+        "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Fully equipped kitchen", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Washing machine", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "High-speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Double sofa bed (21 cm mattress)", "value": true }
+        ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
             "reviewCount": "19"
-        }
+        },
+        "review": [
+            { "@type": "Review", "author": { "@type": "Person", "name": "Ivica" }, "reviewBody": "I cannot even put into words how satisfied we were with our stay. We spent four nights here and it was perfect." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Pauline" }, "reviewBody": "Domus Fiorelli is ideally located: tram line 16 right outside, Tuscolana station and two metro lines nearby." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Bartosz" }, "reviewBody": "From the moment of booking we had excellent contact with the host. He was extremely helpful, replied quickly to messages and took care of us even before we arrived." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Francesco" }, "reviewBody": "An excellent apartment, equipped with every comfort in terms of appliances." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Kalovsky" }, "reviewBody": "The apartment is cozy, clean and comfortable — everything you need for a good stay is there." },
+            { "@type": "Review", "author": { "@type": "Person", "name": "Mirko" }, "reviewBody": "The apartment is newly renovated, beautifully furnished and very well equipped with appliances." }
+        ]
     }
     </script>
 
@@ -92,6 +115,10 @@
         @media(max-width:767px){ body{ padding-bottom:78px; } }
 
         .hub-card{ background:#fff; border:1px solid rgba(28,26,23,0.07); border-radius:1rem; padding:1.5rem; }
+
+        #cookie-banner{ position:fixed; left:0; right:0; bottom:0; z-index:60; background:var(--ink); color:#fff; padding:16px 20px calc(16px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -6px 24px rgba(0,0,0,0.25); }
+        #cookie-banner[hidden]{ display:none; }
+        @media(max-width:767px){ #cookie-banner{ bottom:78px; } }
         .trust-chip{ display:inline-flex; align-items:center; gap:0.5rem; background:#fff; border:1px solid rgba(28,26,23,0.08); border-radius:999px; padding:0.55rem 1.1rem; font-size:0.82rem; font-weight:500; box-shadow:0 4px 14px -8px rgba(28,26,23,0.2); }
     </style>
 </head>
@@ -101,7 +128,7 @@
     <header class="fixed top-0 left-0 w-full z-50 transition-colors duration-500" id="site-header">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-5">
             <div class="flex items-center gap-2.5 text-white">
-                <img src="images/domus-fiorelli-mark.png" alt="Domus Fiorelli" class="h-8 w-auto">
+                <img src="images/domus-fiorelli-mark.png" width="462" height="303" alt="Domus Fiorelli" class="h-8 w-auto">
                 <span class="text-lg tracking-wide serif">Domus Fiorelli</span>
             </div>
             <nav class="hidden lg:flex items-center gap-8 text-sm text-white/90">
@@ -136,7 +163,7 @@
     <!-- Hero -->
     <section class="relative w-full h-[100vh] min-h-[640px] flex items-end overflow-hidden">
         <canvas id="hero-canvas" class="absolute inset-0 w-full h-full z-0 opacity-30 mix-blend-screen"></canvas>
-        <img src="images/giardino.jpeg" alt="Giardino condominiale visto da Domus Fiorelli, Roma" class="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0" style="animation:slowZoom 22s ease-out infinite alternate;">
+        <img src="images/giardino.jpeg" width="1600" height="1200" alt="Giardino condominiale visto da Domus Fiorelli, Roma" class="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0" style="animation:slowZoom 22s ease-out infinite alternate;">
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/50 z-[1]"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 pb-24 md:pb-28">
@@ -184,7 +211,7 @@
 
     <!-- Garden Highlight -->
     <section class="relative w-full h-[52vh] min-h-[360px] overflow-hidden">
-        <img src="images/cucina-pianta-finestra.jpeg" alt="Angolo verde e luce naturale in Domus Fiorelli" class="absolute inset-0 w-full h-full object-cover">
+        <img src="images/cucina-pianta-finestra.jpeg" width="1600" height="1200" alt="Angolo verde e luce naturale in Domus Fiorelli" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/55"></div>
         <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
             <h2 class="text-2xl sm:text-4xl md:text-5xl text-white tracking-tight serif font-normal mask-reveal-text max-w-3xl" data-i18n="garden_kicker">Roma fuori. Tranquillità dentro.</h2>
@@ -245,19 +272,19 @@
     <section class="relative max-w-5xl mx-auto h-[420px] sm:h-[520px] md:h-[600px] flex justify-center items-center mt-8 mb-16 px-4">
         <div class="absolute left-2 sm:left-[8%] md:left-[18%] w-[46%] max-w-[280px] aspect-[4/5] -rotate-6 z-10 transform-gpu hover:z-40 hover:scale-105 hover:-rotate-2 transition-all duration-500 ease-out">
             <div class="w-full h-full bg-gray-200 rounded-2xl border-[8px] sm:border-[10px] border-white shadow-xl overflow-hidden relative group">
-                <img src="images/camera-letto.jpeg" alt="Camera matrimoniale" class="w-full h-full object-cover object-top">
+                <img src="images/camera-letto.jpeg" width="1200" height="1600" alt="Camera matrimoniale" class="w-full h-full object-cover object-top">
             </div>
         </div>
         <div class="absolute left-1/2 -translate-x-1/2 w-[56%] max-w-[340px] aspect-[4/5] z-30 transform-gpu hover:scale-105 transition-all duration-500 ease-out">
             <div class="p-[2px] rounded-2xl bg-gradient-to-b from-gray-200 via-white to-gray-200 shadow-2xl">
                 <div class="w-full h-full bg-white rounded-2xl border-[8px] sm:border-[10px] border-white overflow-hidden relative">
-                    <img src="images/soggiorno-divano-amor.jpeg" alt="Soggiorno con divano letto matrimoniale" class="w-full h-full object-cover">
+                    <img src="images/soggiorno-divano-amor.jpeg" width="1200" height="1600" alt="Soggiorno con divano letto matrimoniale" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
         <div class="absolute right-2 sm:right-[8%] md:right-[18%] w-[46%] max-w-[280px] aspect-[4/5] rotate-6 z-20 transform-gpu hover:z-40 hover:scale-105 hover:rotate-2 transition-all duration-500 ease-out">
             <div class="w-full h-full bg-gray-200 rounded-2xl border-[8px] sm:border-[10px] border-white shadow-xl overflow-hidden relative group">
-                <img src="images/cucina-open-space.jpeg" alt="Cucina completamente attrezzata" class="w-full h-full object-cover">
+                <img src="images/cucina-open-space.jpeg" width="1600" height="1200" alt="Cucina completamente attrezzata" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -266,7 +293,7 @@
     <section class="max-w-6xl mx-auto px-6 pb-24">
         <div class="relative rounded-[2rem] overflow-hidden bg-[var(--ink)] shadow-xl grid md:grid-cols-5 items-stretch">
             <div class="md:col-span-3 relative min-h-[320px] md:min-h-[440px]">
-                <img src="images/soggiorno-divano-amor.jpeg" alt="Divano e insegna al neon AmoR" class="absolute inset-0 w-full h-full object-cover">
+                <img src="images/soggiorno-divano-amor.jpeg" width="1200" height="1600" alt="Divano e insegna al neon AmoR" class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="md:col-span-2 p-10 sm:p-12 md:p-14 flex flex-col justify-center">
                 <span class="inline-block text-[#e9c9a3] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="amor_eyebrow">Roma → AmoR</span>
@@ -290,31 +317,31 @@
         </div>
 
         <div class="masonry">
-            <figure><img src="images/giardino.jpeg" alt="Giardino condominiale"><figcaption data-i18n="cap_giardino">Giardino</figcaption></figure>
-            <figure><img src="images/soggiorno-arco.jpeg" alt="Soggiorno visto dall'arco"><figcaption data-i18n="cap_soggiorno">Soggiorno</figcaption></figure>
-            <figure><img src="images/soggiorno-divano-amor.jpeg" alt="Divano letto matrimoniale in soggiorno"><figcaption data-i18n="cap_soggiorno_amor">Soggiorno · AmoR</figcaption></figure>
-            <figure><img src="images/salotto-tv.jpeg" alt="Salotto con TV e specchio"><figcaption data-i18n="cap_salotto">Salotto</figcaption></figure>
-            <figure><img src="images/ingresso.jpeg" alt="Ingresso"><figcaption data-i18n="cap_ingresso">Ingresso</figcaption></figure>
-            <figure><img src="images/soggiorno-cucina-ampio.jpeg" alt="Vista ampia soggiorno e cucina"><figcaption data-i18n="cap_openspace">Open Space</figcaption></figure>
-            <figure><img src="images/cucina-open-space.jpeg" alt="Cucina open space"><figcaption data-i18n="cap_cucina">Cucina</figcaption></figure>
-            <figure><img src="images/cucina-pranzo.jpeg" alt="Zona pranzo in cucina"><figcaption data-i18n="cap_zonapranzo">Zona Pranzo</figcaption></figure>
-            <figure><img src="images/soggiorno-pranzo-amor.jpeg" alt="Sala da pranzo"><figcaption data-i18n="cap_saladapranzo">Sala da Pranzo</figcaption></figure>
-            <figure><img src="images/cucina-pianta-finestra.jpeg" alt="Angolo verde vicino alla finestra"><figcaption data-i18n="cap_angoloverde">Angolo Verde</figcaption></figure>
-            <figure><img src="images/camera-letto.jpeg" alt="Camera matrimoniale"><figcaption data-i18n="cap_camera">Camera</figcaption></figure>
-            <figure><img src="images/camera-amor.jpeg" alt="Camera matrimoniale, dettaglio"><figcaption data-i18n="cap_camera_amor">Camera · AmoR</figcaption></figure>
-            <figure><img src="images/camera-vista.jpeg" alt="Camera con vista sul giardino"><figcaption data-i18n="cap_camera_vista">Camera · Vista</figcaption></figure>
-            <figure><img src="images/camera-cabina-armadio.jpeg" alt="Cabina armadio della camera"><figcaption data-i18n="cap_cabina">Cabina Armadio</figcaption></figure>
-            <figure><img src="images/bagno-lavandino.jpeg" alt="Bagno con doppio lavabo e specchio"><figcaption data-i18n="cap_bagno">Bagno</figcaption></figure>
-            <figure><img src="images/bagno-dettaglio-asciugamano.jpeg" alt="Asciugamano Domus Fiorelli nel bagno"><figcaption data-i18n="cap_bagno_dettaglio">Bagno · Dettaglio</figcaption></figure>
-            <figure><img src="images/bagno-dyson.jpeg" alt="Asciugacapelli Dyson nel bagno"><figcaption data-i18n="cap_bagno_dyson">Bagno · Dyson</figcaption></figure>
-            <figure><img src="images/soggiorno-poltrona.jpeg" alt="Angolo lettura in soggiorno"><figcaption data-i18n="cap_angololettura">Angolo Lettura</figcaption></figure>
-            <figure><img src="images/soggiorno-console.jpeg" alt="Console con specchio"><figcaption data-i18n="cap_soggiorno_dettaglio_a">Soggiorno · Dettaglio</figcaption></figure>
-            <figure><img src="images/soggiorno-dettaglio.jpeg" alt="Dettaglio del tavolino"><figcaption data-i18n="cap_soggiorno_dettaglio_b">Soggiorno · Dettaglio</figcaption></figure>
-            <figure><img src="images/soggiorno-specchio.jpeg" alt="Riflesso del soggiorno nello specchio"><figcaption data-i18n="cap_soggiorno_specchio">Soggiorno · Specchio</figcaption></figure>
-            <figure><img src="images/cucina-mensole.jpeg" alt="Mensole in cucina"><figcaption data-i18n="cap_cucina_dettaglio_a">Cucina · Dettaglio</figcaption></figure>
-            <figure><img src="images/cucina-mensole-2.jpeg" alt="Mensole cucina, altra vista"><figcaption data-i18n="cap_cucina_dettaglio_b">Cucina · Dettaglio</figcaption></figure>
-            <figure><img src="images/dettaglio-arredo.jpeg" alt="Dettaglio arredamento"><figcaption data-i18n="cap_dettaglioarredo">Dettaglio Arredo</figcaption></figure>
-            <figure><img src="images/dettaglio-scrivania.jpeg" alt="Postazione scrivania"><figcaption data-i18n="cap_angolostudio">Angolo Studio</figcaption></figure>
+            <figure><img src="images/giardino.jpeg" width="1600" height="1200" alt="Giardino condominiale"><figcaption data-i18n="cap_giardino">Giardino</figcaption></figure>
+            <figure><img src="images/soggiorno-arco.jpeg" width="1600" height="1200" alt="Soggiorno visto dall'arco"><figcaption data-i18n="cap_soggiorno">Soggiorno</figcaption></figure>
+            <figure><img src="images/soggiorno-divano-amor.jpeg" width="1200" height="1600" alt="Divano letto matrimoniale in soggiorno"><figcaption data-i18n="cap_soggiorno_amor">Soggiorno · AmoR</figcaption></figure>
+            <figure><img src="images/salotto-tv.jpeg" width="1600" height="1200" alt="Salotto con TV e specchio"><figcaption data-i18n="cap_salotto">Salotto</figcaption></figure>
+            <figure><img src="images/ingresso.jpeg" width="1600" height="1200" alt="Ingresso"><figcaption data-i18n="cap_ingresso">Ingresso</figcaption></figure>
+            <figure><img src="images/soggiorno-cucina-ampio.jpeg" width="1600" height="1200" alt="Vista ampia soggiorno e cucina"><figcaption data-i18n="cap_openspace">Open Space</figcaption></figure>
+            <figure><img src="images/cucina-open-space.jpeg" width="1600" height="1200" alt="Cucina open space"><figcaption data-i18n="cap_cucina">Cucina</figcaption></figure>
+            <figure><img src="images/cucina-pranzo.jpeg" width="1600" height="1200" alt="Zona pranzo in cucina"><figcaption data-i18n="cap_zonapranzo">Zona Pranzo</figcaption></figure>
+            <figure><img src="images/soggiorno-pranzo-amor.jpeg" width="1200" height="1600" alt="Sala da pranzo"><figcaption data-i18n="cap_saladapranzo">Sala da Pranzo</figcaption></figure>
+            <figure><img src="images/cucina-pianta-finestra.jpeg" width="1600" height="1200" alt="Angolo verde vicino alla finestra"><figcaption data-i18n="cap_angoloverde">Angolo Verde</figcaption></figure>
+            <figure><img src="images/camera-letto.jpeg" width="1200" height="1600" alt="Camera matrimoniale"><figcaption data-i18n="cap_camera">Camera</figcaption></figure>
+            <figure><img src="images/camera-amor.jpeg" width="1200" height="1600" alt="Camera matrimoniale, dettaglio"><figcaption data-i18n="cap_camera_amor">Camera · AmoR</figcaption></figure>
+            <figure><img src="images/camera-vista.jpeg" width="1200" height="1600" alt="Camera con vista sul giardino"><figcaption data-i18n="cap_camera_vista">Camera · Vista</figcaption></figure>
+            <figure><img src="images/camera-cabina-armadio.jpeg" width="1200" height="1600" alt="Cabina armadio della camera"><figcaption data-i18n="cap_cabina">Cabina Armadio</figcaption></figure>
+            <figure><img src="images/bagno-lavandino.jpeg" width="1200" height="1600" alt="Bagno con doppio lavabo e specchio"><figcaption data-i18n="cap_bagno">Bagno</figcaption></figure>
+            <figure><img src="images/bagno-dettaglio-asciugamano.jpeg" width="1200" height="1600" alt="Asciugamano Domus Fiorelli nel bagno"><figcaption data-i18n="cap_bagno_dettaglio">Bagno · Dettaglio</figcaption></figure>
+            <figure><img src="images/bagno-dyson.jpeg" width="896" height="1195" alt="Asciugacapelli Dyson nel bagno"><figcaption data-i18n="cap_bagno_dyson">Bagno · Dyson</figcaption></figure>
+            <figure><img src="images/soggiorno-poltrona.jpeg" width="1200" height="1600" alt="Angolo lettura in soggiorno"><figcaption data-i18n="cap_angololettura">Angolo Lettura</figcaption></figure>
+            <figure><img src="images/soggiorno-console.jpeg" width="1200" height="1600" alt="Console con specchio"><figcaption data-i18n="cap_soggiorno_dettaglio_a">Soggiorno · Dettaglio</figcaption></figure>
+            <figure><img src="images/soggiorno-dettaglio.jpeg" width="1200" height="1600" alt="Dettaglio del tavolino"><figcaption data-i18n="cap_soggiorno_dettaglio_b">Soggiorno · Dettaglio</figcaption></figure>
+            <figure><img src="images/soggiorno-specchio.jpeg" width="1200" height="1600" alt="Riflesso del soggiorno nello specchio"><figcaption data-i18n="cap_soggiorno_specchio">Soggiorno · Specchio</figcaption></figure>
+            <figure><img src="images/cucina-mensole.jpeg" width="1200" height="1600" alt="Mensole in cucina"><figcaption data-i18n="cap_cucina_dettaglio_a">Cucina · Dettaglio</figcaption></figure>
+            <figure><img src="images/cucina-mensole-2.jpeg" width="1200" height="1600" alt="Mensole cucina, altra vista"><figcaption data-i18n="cap_cucina_dettaglio_b">Cucina · Dettaglio</figcaption></figure>
+            <figure><img src="images/dettaglio-arredo.jpeg" width="1200" height="1600" alt="Dettaglio arredamento"><figcaption data-i18n="cap_dettaglioarredo">Dettaglio Arredo</figcaption></figure>
+            <figure><img src="images/dettaglio-scrivania.jpeg" width="1200" height="1600" alt="Postazione scrivania"><figcaption data-i18n="cap_angolostudio">Angolo Studio</figcaption></figure>
         </div>
     </section>
 
@@ -356,7 +383,7 @@
     <section id="zona" class="max-w-6xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-2 gap-10 items-center mb-14">
             <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img src="images/giardino.jpeg" alt="Il quartiere Appio Latino intorno a Domus Fiorelli" class="w-full h-full object-cover">
+                <img src="images/giardino.jpeg" width="1600" height="1200" alt="Il quartiere Appio Latino intorno a Domus Fiorelli" class="w-full h-full object-cover">
             </div>
             <div>
                 <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="location_label">La Zona</span>
@@ -499,15 +526,59 @@
                 </a>
             </div>
             <div class="relative min-h-[260px] md:min-h-0 flex items-center justify-center bg-[var(--paper)] p-10">
-                <img src="images/domus-fiorelli-logo.png" alt="Domus Fiorelli" class="w-full max-w-[220px] h-auto object-contain">
+                <img src="images/domus-fiorelli-logo.png" width="462" height="505" alt="Domus Fiorelli" class="w-full max-w-[220px] h-auto object-contain">
             </div>
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="max-w-3xl mx-auto px-6 pb-28">
+        <div class="text-center mb-12">
+            <span class="inline-block text-[var(--clay-dark)] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4" data-i18n="faq_label">Domande Frequenti</span>
+            <h3 class="text-2xl sm:text-3xl md:text-4xl tracking-tight serif font-normal mask-reveal-text" data-i18n="faq_title">Tutto quello che vuoi sapere</h3>
+        </div>
+        <div class="space-y-6">
+            <div class="pb-6 border-b border-black/10">
+                <div class="font-medium mb-2" data-i18n="faq_q1">Quanti ospiti può ospitare Domus Fiorelli?</div>
+                <div class="text-sm text-gray-600 leading-relaxed" data-i18n="faq_a1">Domus Fiorelli ospita fino a 4 persone, con 1 camera matrimoniale e 1 divano letto matrimoniale full-size (materasso da 21 cm) in soggiorno.</div>
+            </div>
+            <div class="pb-6 border-b border-black/10">
+                <div class="font-medium mb-2" data-i18n="faq_q2">Quali dotazioni sono incluse nell'appartamento?</div>
+                <div class="text-sm text-gray-600 leading-relaxed" data-i18n="faq_a2">Cucina completamente attrezzata, lavatrice, aria condizionata, Wi-Fi ad alta velocità e Smart TV.</div>
+            </div>
+            <div class="pb-6 border-b border-black/10">
+                <div class="font-medium mb-2" data-i18n="faq_q3">Quanto dista Domus Fiorelli dalla metro e dal centro di Roma?</div>
+                <div class="text-sm text-gray-600 leading-relaxed" data-i18n="faq_a3">La Metro C (Lodi) è a 600 metri, la Metro A (Re di Roma) a 750 metri, e la stazione Roma Tuscolana — con treni regionali e collegamento per l'aeroporto di Fiumicino — a 550 metri.</div>
+            </div>
+            <div class="pb-6 border-b border-black/10">
+                <div class="font-medium mb-2" data-i18n="faq_q4">Come funziona il check-in?</div>
+                <div class="text-sm text-gray-600 leading-relaxed" data-i18n="faq_a4">Alessandro ti accoglie personalmente a Domus Fiorelli. Il check-in è dalle 15:00, il check-out entro le 11:00.</div>
+            </div>
+            <div>
+                <div class="font-medium mb-2" data-i18n="faq_q5">Il sito e la guida sono disponibili in più lingue?</div>
+                <div class="text-sm text-gray-600 leading-relaxed" data-i18n="faq_a5">Sì: il sito è disponibile in italiano, inglese, francese, tedesco e spagnolo, e durante il soggiorno è disponibile anche una guida digitale dedicata.</div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "Quanti ospiti può ospitare Domus Fiorelli?", "acceptedAnswer": { "@type": "Answer", "text": "Domus Fiorelli ospita fino a 4 persone, con 1 camera matrimoniale e 1 divano letto matrimoniale full-size (materasso da 21 cm) in soggiorno." } },
+            { "@type": "Question", "name": "Quali dotazioni sono incluse nell'appartamento?", "acceptedAnswer": { "@type": "Answer", "text": "Cucina completamente attrezzata, lavatrice, aria condizionata, Wi-Fi ad alta velocità e Smart TV." } },
+            { "@type": "Question", "name": "Quanto dista Domus Fiorelli dalla metro e dal centro di Roma?", "acceptedAnswer": { "@type": "Answer", "text": "La Metro C (Lodi) è a 600 metri, la Metro A (Re di Roma) a 750 metri, e la stazione Roma Tuscolana, con treni regionali e collegamento per l'aeroporto di Fiumicino, a 550 metri." } },
+            { "@type": "Question", "name": "Come funziona il check-in?", "acceptedAnswer": { "@type": "Answer", "text": "Alessandro accoglie personalmente gli ospiti a Domus Fiorelli. Il check-in è dalle 15:00, il check-out entro le 11:00." } },
+            { "@type": "Question", "name": "Il sito e la guida sono disponibili in più lingue?", "acceptedAnswer": { "@type": "Answer", "text": "Sì: il sito è disponibile in italiano, inglese, francese, tedesco e spagnolo, e durante il soggiorno è disponibile anche una guida digitale dedicata." } }
+        ]
+    }
+    </script>
+
     <!-- Contact / Booking -->
     <section id="contatti" class="relative max-w-7xl mx-auto rounded-[2rem] overflow-hidden bg-[var(--ink)] shadow-2xl px-6 sm:px-12 py-16 sm:py-24 text-center mb-4">
         <div class="absolute inset-0 opacity-25">
-            <img src="images/dettaglio-arredo.jpeg" alt="" class="w-full h-full object-cover">
+            <img src="images/dettaglio-arredo.jpeg" width="1200" height="1600" alt="" class="w-full h-full object-cover">
         </div>
         <div class="absolute inset-0 bg-[var(--ink)]/75"></div>
         <div class="relative z-10 max-w-xl mx-auto">
@@ -525,7 +596,7 @@
 
     <!-- Brand Signature -->
     <section class="max-w-3xl mx-auto px-6 pb-16 flex flex-col items-center text-center">
-        <img src="images/domus-fiorelli-logo.png" alt="Domus Fiorelli" class="h-16 w-auto mb-4">
+        <img src="images/domus-fiorelli-logo.png" width="462" height="505" alt="Domus Fiorelli" class="h-16 w-auto mb-4">
         <span class="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-gray-400" data-i18n="brand_payoff">A due passi dal Colosseo, collegato con il mondo</span>
     </section>
 
@@ -568,6 +639,16 @@
             <a href="#contatti" class="inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-6 py-2.5 transition-colors duration-300" data-i18n="nav_check">Richiedi Disponibilità</a>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" hidden>
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-4">
+            <p class="text-xs sm:text-sm text-white/80 flex-1 min-w-[200px]" data-i18n="cookie_banner_text">
+                Questo sito utilizza risorse esterne (font, script) che possono comportare il trasferimento del tuo indirizzo IP a servizi terzi. Non utilizziamo cookie di profilazione. <a href="cookie.html" class="underline hover:text-white">Scopri di più</a>.
+            </p>
+            <button type="button" id="cookie-accept-btn" class="shrink-0 inline-flex items-center justify-center btn-clay text-sm font-medium rounded-full px-6 py-2.5 transition-colors duration-300" data-i18n="cookie_banner_accept">Ho capito</button>
+        </div>
+    </div>
 
     <!-- Mobile sticky CTA -->
     <div class="mobile-cta-bar">
@@ -631,6 +712,19 @@
                 welcome_title: "La tua casa a Roma, con qualcuno ad accoglierti",
                 welcome_text: "Alessandro ti accoglie personalmente a Domus Fiorelli e sarà il tuo punto di riferimento per il check-in e durante il soggiorno.",
                 brand_payoff: "A due passi dal Colosseo, collegato con il mondo",
+                faq_label: "Domande Frequenti", faq_title: "Tutto quello che vuoi sapere",
+                faq_q1: "Quanti ospiti può ospitare Domus Fiorelli?",
+                faq_a1: "Domus Fiorelli ospita fino a 4 persone, con 1 camera matrimoniale e 1 divano letto matrimoniale full-size (materasso da 21 cm) in soggiorno.",
+                faq_q2: "Quali dotazioni sono incluse nell'appartamento?",
+                faq_a2: "Cucina completamente attrezzata, lavatrice, aria condizionata, Wi-Fi ad alta velocità e Smart TV.",
+                faq_q3: "Quanto dista Domus Fiorelli dalla metro e dal centro di Roma?",
+                faq_a3: "La Metro C (Lodi) è a 600 metri, la Metro A (Re di Roma) a 750 metri, e la stazione Roma Tuscolana — con treni regionali e collegamento per l'aeroporto di Fiumicino — a 550 metri.",
+                faq_q4: "Come funziona il check-in?",
+                faq_a4: "Alessandro ti accoglie personalmente a Domus Fiorelli. Il check-in è dalle 15:00, il check-out entro le 11:00.",
+                faq_q5: "Il sito e la guida sono disponibili in più lingue?",
+                faq_a5: "Sì: il sito è disponibile in italiano, inglese, francese, tedesco e spagnolo, e durante il soggiorno è disponibile anche una guida digitale dedicata.",
+                cookie_banner_text: "Questo sito utilizza risorse esterne (font, script) che possono comportare il trasferimento del tuo indirizzo IP a servizi terzi. Non utilizziamo cookie di profilazione. <a href=\"cookie.html\" class=\"underline hover:text-white\">Scopri di più</a>.",
+                cookie_banner_accept: "Ho capito",
                 footer_country: "Roma, Italia",
                 footer_explore_label: "Esplora", footer_stay_label: "Soggiorno", footer_info_label: "Informazioni",
                 footer_privacy: "Privacy Policy", footer_cookie: "Cookie Policy", footer_terms: "Termini & Condizioni", footer_cancellation: "Politica di Cancellazione",
@@ -688,6 +782,19 @@
                 welcome_title: "Your Roman home, with someone to welcome you",
                 welcome_text: "Alessandro welcomes you in person at Domus Fiorelli and will be your point of reference for check-in and throughout your stay.",
                 brand_payoff: "Steps from the Colosseum, connected to the world",
+                faq_label: "Frequently Asked Questions", faq_title: "Everything you want to know",
+                faq_q1: "How many guests can Domus Fiorelli accommodate?",
+                faq_a1: "Domus Fiorelli sleeps up to 4 guests, with 1 double bedroom and 1 full-size double sofa bed (21 cm mattress) in the living room.",
+                faq_q2: "What amenities are included in the apartment?",
+                faq_a2: "A fully equipped kitchen, washing machine, air conditioning, high-speed Wi-Fi and a Smart TV.",
+                faq_q3: "How far is Domus Fiorelli from the metro and Rome's centre?",
+                faq_a3: "Metro C (Lodi) is 600 metres away, Metro A (Re di Roma) is 750 metres away, and Roma Tuscolana station — with regional trains and a connection to Fiumicino Airport — is 550 metres away.",
+                faq_q4: "How does check-in work?",
+                faq_a4: "Alessandro welcomes you in person at Domus Fiorelli. Check-in is from 3:00 PM, check-out by 11:00 AM.",
+                faq_q5: "Is the website and guide available in multiple languages?",
+                faq_a5: "Yes: the website is available in Italian, English, French, German and Spanish, and a dedicated digital guide is also available during your stay.",
+                cookie_banner_text: "This site uses external resources (fonts, scripts) that may transfer your IP address to third-party services. We do not use profiling cookies. <a href=\"cookie.html\" class=\"underline hover:text-white\">Learn more</a>.",
+                cookie_banner_accept: "Got it",
                 footer_country: "Rome, Italy",
                 footer_explore_label: "Explore", footer_stay_label: "Stay", footer_info_label: "Information",
                 footer_privacy: "Privacy Policy", footer_cookie: "Cookie Policy", footer_terms: "Terms & Conditions", footer_cancellation: "Cancellation Policy",
@@ -745,6 +852,19 @@
                 welcome_title: "Votre maison à Rome, avec quelqu'un pour vous accueillir",
                 welcome_text: "Alessandro vous accueille personnellement à Domus Fiorelli et sera votre point de référence pour l'arrivée et pendant tout le séjour.",
                 brand_payoff: "À deux pas du Colisée, connectée au monde",
+                faq_label: "Questions Fréquentes", faq_title: "Tout ce que vous voulez savoir",
+                faq_q1: "Combien de personnes Domus Fiorelli peut-il accueillir ?",
+                faq_a1: "Domus Fiorelli accueille jusqu'à 4 personnes, avec 1 chambre double et 1 canapé-lit double de taille standard (matelas de 21 cm) dans le salon.",
+                faq_q2: "Quels équipements sont inclus dans l'appartement ?",
+                faq_a2: "Une cuisine entièrement équipée, un lave-linge, la climatisation, le Wi-Fi haut débit et une Smart TV.",
+                faq_q3: "À quelle distance se trouve Domus Fiorelli du métro et du centre de Rome ?",
+                faq_a3: "La ligne de métro C (Lodi) est à 600 mètres, la ligne A (Re di Roma) à 750 mètres, et la gare de Roma Tuscolana — avec trains régionaux et liaison vers l'aéroport de Fiumicino — à 550 mètres.",
+                faq_q4: "Comment se déroule l'arrivée ?",
+                faq_a4: "Alessandro vous accueille personnellement à Domus Fiorelli. L'arrivée se fait à partir de 15h, le départ avant 11h.",
+                faq_q5: "Le site et le guide sont-ils disponibles en plusieurs langues ?",
+                faq_a5: "Oui : le site est disponible en italien, anglais, français, allemand et espagnol, et un guide numérique dédié est également disponible pendant votre séjour.",
+                cookie_banner_text: "Ce site utilise des ressources externes (polices, scripts) pouvant entraîner le transfert de votre adresse IP à des services tiers. Nous n'utilisons pas de cookies de profilage. <a href=\"cookie.html\" class=\"underline hover:text-white\">En savoir plus</a>.",
+                cookie_banner_accept: "Compris",
                 footer_country: "Rome, Italie",
                 footer_explore_label: "Explorer", footer_stay_label: "Séjour", footer_info_label: "Informations",
                 footer_privacy: "Politique de Confidentialité", footer_cookie: "Politique de Cookies", footer_terms: "Conditions Générales", footer_cancellation: "Politique d'Annulation",
@@ -802,6 +922,19 @@
                 welcome_title: "Dein römisches Zuhause, mit jemandem, der dich willkommen heißt",
                 welcome_text: "Alessandro empfängt dich persönlich in Domus Fiorelli und ist dein Ansprechpartner für den Check-in und während deines gesamten Aufenthalts.",
                 brand_payoff: "Nur wenige Schritte vom Kolosseum, verbunden mit der Welt",
+                faq_label: "Häufig gestellte Fragen", faq_title: "Alles, was du wissen möchtest",
+                faq_q1: "Wie viele Gäste kann Domus Fiorelli aufnehmen?",
+                faq_a1: "Domus Fiorelli bietet Platz für bis zu 4 Gäste, mit 1 Doppelzimmer und 1 vollwertigen Doppel-Schlafsofa (21 cm Matratze) im Wohnzimmer.",
+                faq_q2: "Welche Ausstattung ist in der Wohnung enthalten?",
+                faq_a2: "Eine voll ausgestattete Küche, Waschmaschine, Klimaanlage, Highspeed-WLAN und ein Smart TV.",
+                faq_q3: "Wie weit ist Domus Fiorelli von der U-Bahn und dem Zentrum Roms entfernt?",
+                faq_a3: "Die Metro C (Lodi) ist 600 Meter entfernt, die Metro A (Re di Roma) 750 Meter, und der Bahnhof Roma Tuscolana — mit Regionalzügen und Anbindung an den Flughafen Fiumicino — liegt 550 Meter entfernt.",
+                faq_q4: "Wie funktioniert der Check-in?",
+                faq_a4: "Alessandro empfängt dich persönlich in Domus Fiorelli. Check-in ist ab 15:00 Uhr, Check-out bis 11:00 Uhr.",
+                faq_q5: "Sind Website und Guide in mehreren Sprachen verfügbar?",
+                faq_a5: "Ja: Die Website ist auf Italienisch, Englisch, Französisch, Deutsch und Spanisch verfügbar, und während deines Aufenthalts steht dir zudem ein eigener digitaler Guide zur Verfügung.",
+                cookie_banner_text: "Diese Website nutzt externe Ressourcen (Schriftarten, Skripte), die zur Übertragung deiner IP-Adresse an Drittanbieter führen können. Wir verwenden keine Profiling-Cookies. <a href=\"cookie.html\" class=\"underline hover:text-white\">Mehr erfahren</a>.",
+                cookie_banner_accept: "Verstanden",
                 footer_country: "Rom, Italien",
                 footer_explore_label: "Entdecken", footer_stay_label: "Aufenthalt", footer_info_label: "Informationen",
                 footer_privacy: "Datenschutz", footer_cookie: "Cookie-Richtlinie", footer_terms: "AGB", footer_cancellation: "Stornierungsbedingungen",
@@ -859,6 +992,19 @@
                 welcome_title: "Tu casa en Roma, con alguien que te recibe",
                 welcome_text: "Alessandro te recibe personalmente en Domus Fiorelli y será tu punto de referencia para el check-in y durante toda la estancia.",
                 brand_payoff: "A dos pasos del Coliseo, conectada con el mundo",
+                faq_label: "Preguntas Frecuentes", faq_title: "Todo lo que quieres saber",
+                faq_q1: "¿Cuántos huéspedes puede alojar Domus Fiorelli?",
+                faq_a1: "Domus Fiorelli aloja hasta 4 huéspedes, con 1 habitación doble y 1 sofá cama doble de tamaño completo (colchón de 21 cm) en el salón.",
+                faq_q2: "¿Qué comodidades están incluidas en el apartamento?",
+                faq_a2: "Cocina totalmente equipada, lavadora, aire acondicionado, Wi-Fi de alta velocidad y Smart TV.",
+                faq_q3: "¿A qué distancia está Domus Fiorelli del metro y del centro de Roma?",
+                faq_a3: "La línea de Metro C (Lodi) está a 600 metros, la línea A (Re di Roma) a 750 metros, y la estación de Roma Tuscolana — con trenes regionales y conexión con el aeropuerto de Fiumicino — a 550 metros.",
+                faq_q4: "¿Cómo funciona el check-in?",
+                faq_a4: "Alessandro te recibe personalmente en Domus Fiorelli. El check-in es a partir de las 15:00 y el check-out antes de las 11:00.",
+                faq_q5: "¿La web y la guía están disponibles en varios idiomas?",
+                faq_a5: "Sí: la web está disponible en italiano, inglés, francés, alemán y español, y durante tu estancia también tienes a tu disposición una guía digital dedicada.",
+                cookie_banner_text: "Este sitio utiliza recursos externos (fuentes, scripts) que pueden implicar la transferencia de tu dirección IP a servicios de terceros. No utilizamos cookies de perfilado. <a href=\"cookie.html\" class=\"underline hover:text-white\">Saber más</a>.",
+                cookie_banner_accept: "Entendido",
                 footer_country: "Roma, Italia",
                 footer_explore_label: "Explorar", footer_stay_label: "Estancia", footer_info_label: "Información",
                 footer_privacy: "Política de Privacidad", footer_cookie: "Política de Cookies", footer_terms: "Términos y Condiciones", footer_cancellation: "Política de Cancelación",
@@ -889,6 +1035,17 @@
             document.querySelectorAll('[data-lang-btn]').forEach(btn => {
                 btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-btn')));
             });
+
+            try {
+                const banner = document.getElementById('cookie-banner');
+                if (banner && !localStorage.getItem('df_cookie_consent')) {
+                    banner.hidden = false;
+                }
+                document.getElementById('cookie-accept-btn')?.addEventListener('click', () => {
+                    try { localStorage.setItem('df_cookie_consent', '1'); } catch (e) {}
+                    banner.hidden = true;
+                });
+            } catch (e) {}
 
             const splitTextToWords = (selector) => {
                 document.querySelectorAll(selector).forEach(el => {
